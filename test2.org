@@ -1,0 +1,2 @@
+#+INCLUDE /Users/ok/repos/org/resources/org-templates/new-setup/setup-barest-options.org
+* Title
