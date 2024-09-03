@@ -1,0 +1,4992 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-08-30 Fri 23:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Soundscapes</title>
+<meta name="author" content="Stephen Strauss" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" "../../css/solarized-dark.css" />
+<link rel="stylesheet" type="text/css" href="css/solarized-dark.css" />
+
+<script src="org-info.js">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+// @license-end
+</script>
+
+<script>
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+org_html_manager.set("TOC_DEPTH", "3");
+org_html_manager.set("LINK_HOME", "");
+org_html_manager.set("LINK_UP", "");
+org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("TOC", "1");
+org_html_manager.set("VIEW", "info");
+org_html_manager.setup();  // activate after the parameters are set
+// @license-end
+</script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Soundscapes</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga20232a">1. Introduction - What Is a Soundscape?</a>
+<ul>
+<li><a href="#orgb9c5f8d">1.1. 1. INTRODUCTION</a>
+<ul>
+<li><a href="#org886b0bd">1.1.1. A. Case Study: The Throat Singers of Tuva</a></li>
+</ul>
+</li>
+<li><a href="#orgeb9fadd">1.2. 2. WHAT IS A SOUNDSCAPE?</a>
+<ul>
+<li><a href="#org332c835">1.2.1. A. The different aspects of the musical environment, ranging from a single musical tradition to all sounds heard in a particular place</a></li>
+</ul>
+</li>
+<li><a href="#orgb4998b5">1.3. 3. LOCATING A SOUNDSCAPE</a>
+<ul>
+<li><a href="#orgeeb457e">1.3.1. A. Sound</a></li>
+<li><a href="#org6a88f99">1.3.2. B. Setting</a></li>
+<li><a href="#org24df5b1">1.3.3. C. Significance</a></li>
+</ul>
+</li>
+<li><a href="#orgbc2c6c2">1.4. 4. THE EVER-CHANGING NATURE OF SOUNDSCAPES</a>
+<ul>
+<li><a href="#orgdce80e4">1.4.1. A. Case Study: David Hykes and Harmonic Chant</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9c6999b">2. Chapter 1 - Sounds: The Materials of Music</a>
+<ul>
+<li><a href="#org9df67e9">2.1. 1. WHAT IS MUSIC?</a>
+<ul>
+<li><a href="#org51d7290">2.1.1. A. Silence is more often than not a relative concept—sound is ubiquitous</a></li>
+<li><a href="#org285bdb8">2.1.2. B. Music can be defined as organized sound that is meaningful to people within a specific time and place.</a></li>
+</ul>
+</li>
+<li><a href="#orgfb591c7">2.2. 2. CHARACTERISTICS OF SOUND</a>
+<ul>
+<li><a href="#orgdd2927c">2.2.1. A. Quality: distinctiveness of a particular voice or instrument, also called tone color or timbre.</a></li>
+<li><a href="#org3f54fb7">2.2.2. B. Intensity: The loudness or softness of a sound</a></li>
+<li><a href="#orgce507e4">2.2.3. C. Pitch: The relative highness or lowness of a sound, determined by frequency of the sound vibration</a></li>
+<li><a href="#org474d27f">2.2.4. D. Duration: The time element of music</a></li>
+</ul>
+</li>
+<li><a href="#org8910b5d">2.3. 3. LISTENING FOR MUSICAL TEXTURE AND FORM</a>
+<ul>
+<li><a href="#orgfa82db3">2.3.1. A. Hearing and Comparing Textures</a></li>
+<li><a href="#org0adeac5">2.3.2. B. Hearing and Comparing Forms</a></li>
+</ul>
+</li>
+<li><a href="#orga29d755">2.4. 4. PROCESSES OF MUSICAL CREATIVITY: COMPOSITION, PERFORMANCE, IMPROVISATION</a>
+<ul>
+<li><a href="#orgd603468">2.4.1. A. Composition: Process of creating music</a></li>
+<li><a href="#org3900113">2.4.2. B. Improvisation: Spontaneous creation of music during performance</a></li>
+</ul>
+</li>
+<li><a href="#orgd27b521">2.5. 5. GEOGRAPHIES OF SOUND</a>
+<ul>
+<li><a href="#orgab855ce">2.5.1. A. Soundscapes that occur in the same geographic location often overlap and influence one another.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgf0e2e94">3. Chapter 2 - Setting: The Study of Local Musics</a>
+<ul>
+<li><a href="#org765a16e">3.1. 1. INTRODUCTION: SETTING THE STAGE</a>
+<ul>
+<li><a href="#orgf32fb75">3.1.1. A. Setting encompasses multiple contexts.</a></li>
+</ul>
+</li>
+<li><a href="#org456d2c2">3.2. 2. CASE STUDY: ACCRA, GHANA</a>
+<ul>
+<li><a href="#org7aafee1">3.2.1. A. Hearing Highlife in Accra</a></li>
+<li><a href="#orgc75db8e">3.2.2. B. Multicultural Accra</a></li>
+<li><a href="#org6ef7a04">3.2.3. C. Music in Ghanaian Christian Life</a></li>
+<li><a href="#org799ea9b">3.2.4. D. Accra's Global Connections</a></li>
+</ul>
+</li>
+<li><a href="#org3a6f113">3.3. 3. CASE STUDY: MUMBAI, INDIA</a>
+<ul>
+<li><a href="#orgf093e27">3.3.1. A. Mumbai has been the regional capital since India’s independence from</a></li>
+<li><a href="#orgb939882">3.3.2. B. The Ganesh Chaturthi Festival</a></li>
+<li><a href="#org1acce01">3.3.3. C. Music of Mumbai's Ethnic Communities</a></li>
+<li><a href="#org4229ad4">3.3.4. D. The Mumbai Film Industry</a></li>
+</ul>
+</li>
+<li><a href="#org944ca4e">3.4. 4. CASE STUDY: BOSTON, USA</a>
+<ul>
+<li><a href="#org370b998">3.4.1. A. Why Boston?</a></li>
+<li><a href="#org46f791d">3.4.2. B. What Elements Make Up Boston's Musical Life?</a></li>
+<li><a href="#org2704baa">3.4.3. C. Where and When Is Music Performed?</a></li>
+<li><a href="#org089bfac">3.4.4. D. Who Makes the Music?</a></li>
+<li><a href="#org34d040c">3.4.5. E. Boston's Defining Musical Communities</a></li>
+<li><a href="#orgba25e8a">3.4.6. F. Boston's Distinctive Musical Profile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2e3f993">4. Chapter 3 - Significance: Music’s Meaning in Everyday Life</a>
+<ul>
+<li><a href="#org8544440">4.1. 1. INTRODUCTION</a>
+<ul>
+<li><a href="#orgfb844cf">4.1.1. A. Significance: Music is able to elicit many ideas and emotions at the same time.</a></li>
+</ul>
+</li>
+<li><a href="#org0553473">4.2. 2. CASE STUDY: MEANING IN SOUTH INDIAN RAGA</a>
+<ul>
+<li><a href="#org28c2a60">4.2.1. A. Ragas are the Indian system for organizing melodies.</a></li>
+</ul>
+</li>
+<li><a href="#orga3a0c39">4.3. 3. CASE STUDY: THE QUINCEAÑERA</a>
+<ul>
+<li><a href="#org723a0ac">4.3.1. A. La quinceañera, celebrated in Latino communities, marks a teenage</a></li>
+</ul>
+</li>
+<li><a href="#orgf3552ba">4.4. 4. CASE STUDY: BAGPIPE MUSIC</a>
+<ul>
+<li><a href="#org9514d8e">4.4.1. A. The bagpipe is a wind instrument</a></li>
+<li><a href="#org8eee332">4.4.2. B. Sound</a></li>
+<li><a href="#org7065389">4.4.3. C. Setting</a></li>
+<li><a href="#orgbe6dd34">4.4.4. D. Significance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgd0e0edb">5. Chapter 4 - Music and Migration</a>
+<ul>
+<li><a href="#org33ef674">5.1. I. INTRODUCTION</a>
+<ul>
+<li><a href="#org8192cf6">5.1.1. A. Music is important to the migration process for several reasons</a></li>
+</ul>
+</li>
+<li><a href="#org3ce5a3f">5.2. II. VOLUNTARY MIGRATION</a>
+<ul>
+<li><a href="#org383f9cc">5.2.1. A. Voluntary migration is the movement of people to a new region by choice, motivated by an attraction to the new locale.</a></li>
+<li><a href="#org262d9bc">5.2.2. B. Case Study: The Chinese Migration</a></li>
+<li><a href="#org0bd50f2">5.2.3. C. Case Study: Arab Migration from the Middle East</a></li>
+</ul>
+</li>
+<li><a href="#orgbe221eb">5.3. III.FORCED MIGRATION</a>
+<ul>
+<li><a href="#org0a60c33">5.3.1. A. Case Study: African Forced Migrations</a></li>
+<li><a href="#org3c5f89a">5.3.2. B. Case Study: The Vietnamese Migration</a></li>
+<li><a href="#org54ec893">5.3.3. C. THE NATIONAL ROAD SONG CYCLE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7bd72d7">6. Chapter 5 – Music and Memory</a>
+<ul>
+<li><a href="#org8f5ef57">6.1. I. INTRODUCTION</a>
+<ul>
+<li><a href="#org3a83206">6.1.1. A. Musical transmission is dependent on processes of remembering.</a></li>
+<li><a href="#org3c30999">6.1.2. B. When we participate in or hear a musical performance, we experience a feeling similar to that in which a memory was first generated.</a></li>
+</ul>
+</li>
+<li><a href="#orgf05c479">6.2. II. REMEMBERING THROUGH MUSIC</a>
+<ul>
+<li><a href="#org9e95417">6.2.1. A. Case Study: The Corrido</a></li>
+</ul>
+</li>
+<li><a href="#orge7b3abd">6.3. III. COMMEMORATING THROUGH MUSIC</a>
+<ul>
+<li><a href="#org8974c0d">6.3.1. A. Case Study: The Jazz Funeral</a></li>
+</ul>
+</li>
+<li><a href="#orgf86d317">6.4. IV. RECONCILING MEMORIES THROUGH MUSIC</a>
+<ul>
+<li><a href="#org25bb773">6.4.1. A. Case Study: The Syrian Jewish Pizmon</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orga99f102">7. Chapter 6 - Music, Mobility, and the Global Marketplace</a>
+<ul>
+<li><a href="#org998ed30">7.1. 1. INTRODUCTION</a>
+<ul>
+<li><a href="#org91d6f14">7.1.1. A. Global forces shape present-day musical transmission and performance.</a></li>
+<li><a href="#org3885515">7.1.2. B. All micromusics—small musical units within big music cultures—can be situated within three interacting and overlapping levels.</a></li>
+</ul>
+</li>
+<li><a href="#org108594c">7.2. 2. TRAVEL AND TOURISM</a>
+<ul>
+<li><a href="#org12936e9">7.2.1. A. Case Study: The Hawaiian Sound</a></li>
+</ul>
+</li>
+<li><a href="#org9280033">7.3. 3. INTERCULTURAL TRANSMISSION AND BOUNDARY CROSSING</a>
+<ul>
+<li><a href="#org5cc5004">7.3.1. A. Case Study: New Music for Balinese Gamelan</a></li>
+</ul>
+</li>
+<li><a href="#org9c82468">7.4. 4. MUSIC AS ART AND COMMODITY</a>
+<ul>
+<li><a href="#org29ee67a">7.4.1. A. Case Study: Traveling the Silk Road</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org3fad709">8. Chapter 7 - Music and Dance</a>
+<ul>
+<li><a href="#orgf469de5">8.1. 1. INTRODUCTION</a>
+<ul>
+<li><a href="#org35688c0">8.1.1. A. Like music, dance exists in time and space.</a></li>
+<li><a href="#orgd36fb24">8.1.2. B. Dance and its musical accompaniment are so closely joined that both are often known by the same name.</a></li>
+<li><a href="#org6cf4bf4">8.1.3. C. Dance enacts the most important values of a soundscape and communicates and reinforces these ideas.</a></li>
+</ul>
+</li>
+<li><a href="#org0b78491">8.2. 2. HEARING AND FEELING THE DANCE</a>
+<ul>
+<li><a href="#orge11854a">8.2.1. A. Case Study: The Union of Dance and Martial Art in Capoeira</a></li>
+<li><a href="#org452ad03">8.2.2. B. Case Study: Moving through Time and Space with Bhangra</a></li>
+</ul>
+</li>
+<li><a href="#org3af31fb">8.3. 3. DANCE STYLES AND THEIR MULTIPLE MEANINGS</a>
+<ul>
+<li><a href="#org5d26a2f">8.3.1. A. Case Study: The Tango</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org67fea20">9. Chapter 8 - Music and Ritual</a>
+<ul>
+<li><a href="#org49c08ac">9.1. 1. INTRODUCTION</a>
+<ul>
+<li><a href="#org1eff015">9.1.1. A. Public celebrations of religious belief have provided important settings for musical performance.</a></li>
+</ul>
+</li>
+<li><a href="#org541aa1b">9.2. 2. THE CENTRALITY OF CHANT</a>
+<ul>
+<li><a href="#org8622987">9.2.1. A. Case Study: Tibetan Buddhist Chant</a></li>
+</ul>
+</li>
+<li><a href="#org168e8e6">9.3. 3. THE CHANGING CONTEXTS OF RITUAL PERFORMANCE</a>
+<ul>
+<li><a href="#orgb61c382">9.3.1. A. Case Study: Santería</a></li>
+<li><a href="#orgbc79ac0">9.3.2. B. Case Study: Ethiopian Christian Chant</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge3e46b8">10. Chapter 9 - Music and Politics</a>
+<ul>
+<li><a href="#org2942812">10.1. 1. INTRODUCTION</a>
+<ul>
+<li><a href="#org50af7fc">10.1.1. A. Music has always been an integral part of formal displays of political power.</a></li>
+<li><a href="#org8608dd1">10.1.2. B. It has traditionally conveyed both national identity and official ideologies through symbolic acts, such as the singing of a national anthem.</a></li>
+<li><a href="#orgc10cff5">10.1.3. C. Music can empower people within a particular setting while it is being used and transformed in very different contexts.</a></li>
+</ul>
+</li>
+<li><a href="#org32eedf7">10.2. 2. MUSICS OF POWER AND RESISTANCE</a>
+<ul>
+<li><a href="#org49b805b">10.2.1. A. Case Study: The Birth of a National Anthem</a></li>
+<li><a href="#org33d15c0">10.2.2. B. Case Study: Reggae</a></li>
+<li><a href="#orgb9f6896">10.2.3. C. Case Study: The Shoshone Powwow</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6a4a3b5">11. Chapter 10 - Music and Identity</a>
+<ul>
+<li><a href="#orge447b88">11.1. 1. INTRODUCTION</a>
+<ul>
+<li><a href="#orgf513630">11.1.1. A. Among the many elements that define our identities are ethnicity, race, class, gender, and religious orientation.</a></li>
+<li><a href="#org0a09170">11.1.2. B. Identities are complex formations that rarely stay static.</a></li>
+<li><a href="#orgad49df2">11.1.3. C. Musical styles that symbolize identity maintain strong links with the past or with an original homeland.</a></li>
+</ul>
+</li>
+<li><a href="#org5182fb6">11.2. 2. EXPRESSING INDIVIDUAL AND GROUP IDENTITIES THROUGH MUSIC</a>
+<ul>
+<li><a href="#org10bd2ba">11.2.1. A. Case Study: The Intercultural Music of Composer Lei Liang</a></li>
+<li><a href="#org16dd1ca">11.2.2. B. Case Study: The Multiple Meanings of Karaoke</a></li>
+<li><a href="#org590bffd">11.2.3. C. Case Study: Multiple Identities in Cajun and Zydeco Musics</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga20232a" class="outline-2">
+<h2 id="orga20232a"><span class="section-number-2">1.</span> Introduction - What Is a Soundscape?</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgb9c5f8d" class="outline-3">
+<h3 id="orgb9c5f8d"><span class="section-number-3">1.1.</span> 1. INTRODUCTION</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org886b0bd" class="outline-4">
+<h4 id="org886b0bd"><span class="section-number-4">1.1.1.</span> A. Case Study: The Throat Singers of Tuva</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org635d0eb"></a>1. Distinctive vocal method called khoomii<br /></li>
+
+<li><a id="orged4dd2e"></a>2. Musics from around the globe surround most of us where we live.<br />
+<ol class="org-ol">
+<li><a id="orgefce75b"></a>a. Accessible for an evening in concert or through the media<br />
+<div class="outline-text-6" id="text-1-1-1-2-1">
+<p>
+i. We can actively seek out new musical experiences.
+</p>
+
+<p>
+ii. They also casually enter our perception.
+</p>
+
+<p>
+b. The presence of multiple musics in familiar places is a reality of life worldwide in the twenty-first century.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="orge941131"></a>3. Ethnomusicology unites the study of music with the concerns and methods of anthropology.<br />
+<ol class="org-ol">
+<li><a id="orge46b5e0"></a>a. Depends on observation of and participation in musical events<br />
+<div class="outline-text-6" id="text-1-1-1-3-1">
+<p>
+b. Important moments in ethnomusicology
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgeb9fadd" class="outline-3">
+<h3 id="orgeb9fadd"><span class="section-number-3">1.2.</span> 2. WHAT IS A SOUNDSCAPE?</h3>
+<div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org332c835" class="outline-4">
+<h4 id="org332c835"><span class="section-number-4">1.2.1.</span> A. The different aspects of the musical environment, ranging from a single musical tradition to all sounds heard in a particular place</h4>
+<div class="outline-text-4" id="text-1-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org971a4a0"></a>1. A sonic environment that could be compared to a seascape<br />
+<ol class="org-ol">
+<li><a id="org13ac762"></a>a. Flexible; music's ability both to stay in place and to move<br />
+<div class="outline-text-6" id="text-1-2-1-1-1">
+<p>
+i. Musical traditions can be anchored to one place for a long time.
+</p>
+
+<p>
+ii. May move beyond the horizon
+</p>
+
+<p>
+iii. May be blown off course unexpectedly
+</p>
+
+<p>
+b. A flexible approach is needed to think about a soundscape's setting and aspects of sound and performance.
+</p>
+
+<p>
+c. People’s interpretations of music’s significance are shaped by and contribute to shared patterns of knowledge and experience (culture).
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgb4998b5" class="outline-3">
+<h3 id="orgb4998b5"><span class="section-number-3">1.3.</span> 3. LOCATING A SOUNDSCAPE</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgeeb457e" class="outline-4">
+<h4 id="orgeeb457e"><span class="section-number-4">1.3.1.</span> A. Sound</h4>
+<div class="outline-text-4" id="text-1-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org495648a"></a>1. Individual voices and instruments are distinguished by differences in sound properties.<br />
+<ol class="org-ol">
+<li><a id="org3596528"></a>a. Studied through the field of acoustics<br />
+<div class="outline-text-6" id="text-1-3-1-1-1">
+<p>
+i. Each voice or instrument produces a blend of the fundamental tone and a series of tones above it.
+ii. The harmonic series: an acoustical phenomenon
+</p>
+</div>
+</li>
+
+<li><a id="org8bdaff4"></a>a. Tone quality called timbre<br />
+<div class="outline-text-6" id="text-1-3-1-1-2">
+<p>
+b. Each instrument and voice has a unique timbre.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgf30d940"></a>2. Khoomii singers produce two tones at the same time.<br />
+<ol class="org-ol">
+<li><a id="orgac32fea"></a>a. Singer causes one additional partial to be heard above the fundamental.<br />
+<div class="outline-text-6" id="text-1-3-1-2-1">
+<p>
+b. Some singers can produce a third partial as well.
+c. In other traditions besides khoomii, upper partials are audible.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="orgcca60fc"></a>3. There are many styles of khoomii with contrasting sound characteristics in different regions of the country.<br />
+<ol class="org-ol">
+<li><a id="org2c051dc"></a>a. Kargyraa<br />
+<div class="outline-text-6" id="text-1-3-1-3-1">
+<p>
+i. Has a lower-pitched fundamental and a husky voice quality
+ii. May have a text
+</p>
+
+<p>
+b. Sygyt
+i. Has a higher-pitched fundamental
+ii. Clear harmonics that sound like whistling
+c. Many personal styles
+i. Nose khoomii
+ii. Chest khoomii
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org6a88f99" class="outline-4">
+<h4 id="org6a88f99"><span class="section-number-4">1.3.2.</span> B. Setting</h4>
+<div class="outline-text-4" id="text-1-3-2">
+</div>
+<ol class="org-ol">
+<li><a id="org266f890"></a>1. Includes everything from the venue to the behavior of those present<br />
+<ol class="org-ol">
+<li><a id="orge296301"></a>a. Reveals much about a musical event<br />
+<div class="outline-text-6" id="text-1-3-2-1-1">
+<p>
+i. Concert halls are constructed to contain musical sound.
+ii. Music performed on street corners transforms a nonmusical venue.
+iii. Recorded sound of a private experience might reach millions of listeners.
+</p>
+
+<p>
+b. Determines, to a great extent, what we hear and see
+i. Every musical event is influenced by others that came before it.
+ii. Musicmakers must be creative in adapting their traditions to the situation.
+c. The setting of each performance conveys meanings for both performers and listeners.
+i. Traditional venues can be dramatically different from venues faced by musicians performing abroad.
+</p>
+</div>
+</li>
+
+<li><a id="orgcdfe5d1"></a>a. Throat singing was a largely a solitary pursuit.<br /></li>
+</ol>
+</li>
+<li><a id="orgdb3999d"></a>1. Particular settings shaped the musical sound.<br /></li>
+<li><a id="org57a4e80"></a>2. Ezengileer is a notable example.<br />
+<div class="outline-text-5" id="text-1-3-2-3">
+<p>
+b. Throat singing is now performed on concert halls at home and abroad.
+</p>
+</div>
+</li>
+<li><a id="org9de025d"></a>1. Singers adjust the length of music and perform in groups rather than as soloist.<br /></li>
+<li><a id="org18cb73f"></a>2. Alternate singing with instrumental selections<br /></li>
+<li><a id="org7bafc55"></a>3. Provide oral commentary<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org24df5b1" class="outline-4">
+<h4 id="org24df5b1"><span class="section-number-4">1.3.3.</span> C. Significance</h4>
+<div class="outline-text-4" id="text-1-3-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgbcb43f9"></a>1. Music means, or signifies, different things to performers and listeners from different backgrounds.<br />
+<ol class="org-ol">
+<li><a id="org977f3b7"></a>a. Certain musical events can come to symbolize meaningful moments.<br />
+<div class="outline-text-6" id="text-1-3-3-1-1">
+<p>
+b. In other cases, music carries meanings that are hidden or hard to describe.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgda38465"></a>2. Khoomii is an example of a tradition with multiple meanings for performers and listeners.<br />
+<ol class="org-ol">
+<li><a id="orgb9ed103"></a>a. By imitating natural sounds, singers reinforce their connection to the physical environment of Tuva.<br />
+<div class="outline-text-6" id="text-1-3-3-2-1">
+<p>
+i. Anchored in traditional Tuvan spiritual practices.
+ii. Some Tuvans trace the origins of khoomii to lullabies.
+iii. Khoomii may signify deep-seated associations with the homeland as well as ties to the family.
+iv. Tuvans created musical representations of natural sounds of wind, water, and animals.
+v. They shaped melodies to reflect features of the Tuvan topography.
+</p>
+
+<p>
+b. Tuvan music is not considered by its musicians to as abstract but as “radically representational.”
+i. Outsiders may be so surprised by audible harmonics that they do not consider the sounds’ significance.
+ii. Repeated exposure can help outsiders become more sensitive to the range of meanings available to insiders.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgbc2c6c2" class="outline-3">
+<h3 id="orgbc2c6c2"><span class="section-number-3">1.4.</span> 4. THE EVER-CHANGING NATURE OF SOUNDSCAPES</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-orgdce80e4" class="outline-4">
+<h4 id="orgdce80e4"><span class="section-number-4">1.4.1.</span> A. Case Study: David Hykes and Harmonic Chant</h4>
+<div class="outline-text-4" id="text-1-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="org10f67c5"></a>1. In the early 1970s, the young American musician David Hykes heard a recording of khoomii from Mongolia.<br />
+<ol class="org-ol">
+<li><a id="org2377114"></a>a. Through experimentation, Hykes taught himself how to sing khoomii.<br />
+<div class="outline-text-6" id="text-1-4-1-1-1">
+<p>
+b. He also encountered the vocal techniques used by some orders of Tibetan monks to produces multiple harmonics.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org4f6c6c1"></a>2. Hykes formed the Harmonic Choir in 1975.<br />
+<ol class="org-ol">
+<li><a id="orgaaa5204"></a>a. Ensemble of men and women who performed his compositions<br />
+<div class="outline-text-6" id="text-1-4-1-2-1">
+<p>
+i. Choir sang creating similar harmonics to those used in Tibetan chant.
+ii. Hykes would sing a khoomii solo.
+</p>
+
+<p>
+b. Performed in the Cathedral of St. John the Divine in New York City
+i. Setting enhanced the sound and lent added significance
+ii. Most of Hykes's performances were in resonant churches.
+iii. Hykes believed music should be more than entertainment and should be a spiritual experience.
+</p>
+</div>
+</li>
+<li><a id="org3549d3f"></a>a. Conveyed universalist ideas shared by many New Age musicians<br />
+<div class="outline-text-6" id="text-1-4-1-2-2">
+<p>
+b. Presented concerts on days of universal significance
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org8fec860"></a>3. In 1987 Hykes moved to France.<br />
+<ol class="org-ol">
+<li><a id="orgd719ce9"></a>a. Incorporated more styles into his solo khoomii-based compositions<br />
+<div class="outline-text-6" id="text-1-4-1-3-1">
+<p>
+b. Draws on improvisation during live performance
+i. Cultivates a spiritual atmosphere while formulating a “new traditional or sacred art”
+ii. Based on historical traditions, and at the same time constitutes a new beginning
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9c6999b" class="outline-2">
+<h2 id="org9c6999b"><span class="section-number-2">2.</span> Chapter 1 - Sounds: The Materials of Music</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org9df67e9" class="outline-3">
+<h3 id="org9df67e9"><span class="section-number-3">2.1.</span> 1. WHAT IS MUSIC?</h3>
+<div class="outline-text-3" id="text-2-1">
+</div>
+<div id="outline-container-org51d7290" class="outline-4">
+<h4 id="org51d7290"><span class="section-number-4">2.1.1.</span> A. Silence is more often than not a relative concept—sound is ubiquitous</h4>
+</div>
+
+<div id="outline-container-org285bdb8" class="outline-4">
+<h4 id="org285bdb8"><span class="section-number-4">2.1.2.</span> B. Music can be defined as organized sound that is meaningful to people within a specific time and place.</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+i. Some define music as organized sound with a melody
+ii. Others define music by rhythm
+iii. Closely related music cultures can also categorize the same sounds differently
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org5a10fdf"></a>a. Inuit define their katajjaq as a vocal game; however, closely related Chukchi and Ainu people consider similar songs to be music<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgfb591c7" class="outline-3">
+<h3 id="orgfb591c7"><span class="section-number-3">2.2.</span> 2. CHARACTERISTICS OF SOUND</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgdd2927c" class="outline-4">
+<h4 id="orgdd2927c"><span class="section-number-4">2.2.1.</span> A. Quality: distinctiveness of a particular voice or instrument, also called tone color or timbre.</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+i. Sound Sources: The Voice
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgaf89b91"></a>a. Vibrato: a purposeful vibration of the tone<br />
+<div class="outline-text-6" id="text-2-2-1-0-1">
+<p>
+b. Straight tone: a sound with little or no vibrato
+c. Raspy: rough or gruff in quality in a singing voice
+d. Chest voice: produces a low, powerful, throaty vocal production; this vocal quality is often heard in rock music
+e. Head voice: produces a light, high tone that resonates in the head
+f. Falsetto: the male head voice, produced by singing in a high register above the normal male singing range
+g. Nasal quality: quality produced by using the sinuses and mask of the face as sound resonators
+</p>
+
+<p>
+ii. Sound Sources: Instruments
+</p>
+</div>
+</li>
+<li><a id="org31ccfd8"></a>a. Gamelan: large Indonesian instrumental ensembles<br />
+<div class="outline-text-6" id="text-2-2-1-0-2">
+<p>
+b. Steel drums: Trinidad, instruments made from modified oil drums, known as pans
+c. Shakuhachi: Japanese flute associated with court and Zen monks
+d. Different instruments may be closely identified with either men or women.
+e. Instruments that are markers of ethnic and national identity can attain even deeper associations as people emigrate (Armenian duduk).
+f. Instruments often carry prestige or status related to their historical roles in society (Ethiopian baganna).
+</p>
+
+<p>
+iii. The Study and Classification of Musical Instruments
+</p>
+</div>
+</li>
+<li><a id="orgbf1337c"></a>a. Organology: the study of musical instruments<br />
+<div class="outline-text-6" id="text-2-2-1-0-3">
+<p>
+b. Sachs-Hornbostel system: four-part classification system based on the means by which instruments produce sound (fifth category added later)
+</p>
+</div>
+</li>
+</ol>
+
+<li><a id="org60d6d46"></a>1. Idiophones: self-sounding instruments; the material of which they are made is set into vibration<br /></li>
+
+<li><a id="org07a0251"></a>2. Chordophones: sound source is one or more vibrating strings<br />
+<ol class="org-ol">
+<li><a id="org16abb53"></a>a. Lutes: neck and body parallel to the strings.<br />
+<div class="outline-text-6" id="text-2-2-1-2-1">
+<p>
+b. Harp: soundboard to which strings are attached at an angle
+c. Lyre: two distinctive arms and crossbar running between them to which the strings are attached
+d. Zither: instrument with a flat body to which strings are attached parallel to the body
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org15a298a"></a>3. Aerophones: Instruments in which an enclosed column of air vibrates to produce sound; have an opening or mouthpiece through which the player blows air<br />
+<ol class="org-ol">
+<li><a id="org362f4a7"></a>a. Endblown: blown through a hole (mouthpiece) at the end<br />
+<div class="outline-text-6" id="text-2-2-1-3-1">
+<p>
+b. Transverse: blown through a hole on the side
+c. Free reeds have enclosed reeds through which air is pushed.
+d. Free aerophones act directly on surrounding air without enclosing it.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="orgc359877"></a>4. Membranophones: Characterized by a membrane (drumhead) stretched across one or both ends of the instrument. Classified by:<br />
+<ol class="org-ol">
+<li><a id="org723bab9"></a>a. Shape: cylindrical, bowl (kettle), hourglass, or goblet<br />
+<div class="outline-text-6" id="text-2-2-1-4-1">
+<p>
+b. How membranes are attached (glued, tacked, laced, etc.)
+c. Ways in which sound is produced (hands or sticks)
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org3cee3d8"></a>5. Electrophones: Instruments whose sound is produced or modified electronically<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org3f54fb7" class="outline-4">
+<h4 id="org3f54fb7"><span class="section-number-4">2.2.2.</span> B. Intensity: The loudness or softness of a sound</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+i. Volume or dynamics
+</p>
+
+<p>
+ii. Can be measured by a decibel meter
+</p>
+
+<p>
+iii. Many music traditions have terms to describe intensity levels
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org614ad1d"></a>a. Balinese gamelan<br /></li>
+</ol>
+<li><a id="org2cb54f6"></a>1. Keras refers to a strong, loud sound<br /></li>
+<li><a id="org7b308c5"></a>2. Manis is a sweet, soft sound<br />
+<div class="outline-text-5" id="text-2-2-2-2">
+<p>
+b. Western classical music
+</p>
+</div>
+</li>
+<li><a id="orgeca1f2e"></a>1. Forte refers to a loud sound<br /></li>
+<li><a id="orgc002b99"></a>2. Piano refers to a soft sound<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-orgce507e4" class="outline-4">
+<h4 id="orgce507e4"><span class="section-number-4">2.2.3.</span> C. Pitch: The relative highness or lowness of a sound, determined by frequency of the sound vibration</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+i. Hearing and Comparing Pitch Systems and Scales
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org9fc47e4"></a>a. The overall compass of pitches from highest to lowest that an instrument or voice can produce is called range.<br />
+<div class="outline-text-6" id="text-2-2-3-0-1">
+<p>
+b. The distance between pitches is called an interval.
+c. A set of pitches arranged in order of ascent and descent is called a scale.
+</p>
+</div>
+</li>
+</ol>
+<li><a id="orgc19651c"></a>1. raga<br /></li>
+<li><a id="org9da9674"></a>2. mode<br /></li>
+<li><a id="orgacde216"></a>3. pentatonic scale<br />
+<div class="outline-text-5" id="text-2-2-3-3">
+<p>
+ii. Melody and Processes of Ornamentation
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="org524259b"></a>a. Melody: Organized pitches in meaningful units<br /></li>
+</ol>
+</li>
+<li><a id="org7ca7589"></a>1. Conjunct motion: Melody moves in close and regular intervals in a stepwise pattern.<br /></li>
+<li><a id="org0df4cc6"></a>2. Disjunct motion: Melody moves mainly in larger intervals.<br /></li>
+<li><a id="org849101a"></a>3. Melodies can be decorated or ornamented.<br /></li>
+<li><a id="org001c1c4"></a>4. Melodies are made up of phrases.<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org474d27f" class="outline-4">
+<h4 id="org474d27f"><span class="section-number-4">2.2.4.</span> D. Duration: The time element of music</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<p>
+i. Pulse: A regular beat, like a heartbeat
+ii. Rhythm: General temporal organization of music
+iii. Tempo: Music's rate of speed
+iv. Hearing and Comparing Rhythmic Systems
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orga4d10fa"></a>a. Meter: Hierarchical durational system divided into groups of beats called measures<br /></li>
+</ol>
+<li><a id="orgda8fd43"></a>1. Simple: Two, three, or four beats per measure<br /></li>
+<li><a id="orgf6c31b9"></a>2. Compound: Six, nine, or twelve beats per measure<br />
+<div class="outline-text-5" id="text-2-2-4-2">
+<p>
+b. Syncopation: Rhythmic effect that provides an unexpected accent, often by temporarily unsettling the meter through a change in the established pattern of stressed and unstressed beats.
+</p>
+</div>
+</li>
+<li><a id="orge90cc7c"></a>1. Many cultures use irregular or asymmetrical meters.<br /></li>
+<li><a id="orge598d7e"></a>2. Some music is so flexible in its rhythmic organization that it is said to have free rhythm.<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org8910b5d" class="outline-3">
+<h3 id="org8910b5d"><span class="section-number-3">2.3.</span> 3. LISTENING FOR MUSICAL TEXTURE AND FORM</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-orgfa82db3" class="outline-4">
+<h4 id="orgfa82db3"><span class="section-number-4">2.3.1.</span> A. Hearing and Comparing Textures</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+i. Texture is the vertical structure of music, the perceived relationship of simultaneous musical sounds.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orgcb9b9b3"></a>1. Monophony: Individual voice or instrument is performing alone (solo), or more than one voice or instrument sings or plays exactly the same melody<br />
+<div class="outline-text-5" id="text-2-3-1-1">
+<p>
+2. Biphony: Texture with two distinct lines, the lower sustaining a continuous pitch (drone) while the other performs a more elaborate melody above it
+</p>
+</div>
+</li>
+<li><a id="orgc0baa6f"></a>3. Homophony: Texture with a melody supported by other vocal or instrumental parts, all of which move along in roughly the same rhythm.<br /></li>
+<li><a id="org30f3fca"></a>4. Polyphony: Combination of two or more different melodic lines<br />
+<ol class="org-ol">
+<li><a id="orge661811"></a>a. Polyrhythms: Several contrasting rhythmic patterns played simultaneously<br /></li>
+</ol>
+</li>
+<li><a id="orgfcba8fc"></a>5. Heterophony: Two or more voices or instruments produce almost the same melody at almost the same time; the parts are often ornamented differently.<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org0adeac5" class="outline-4">
+<h4 id="org0adeac5"><span class="section-number-4">2.3.2.</span> B. Hearing and Comparing Forms</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+i. Form: The shape or structure of music
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orge61711c"></a>a. Strophic: Song structure in which all verses of text are set to the same melody<br />
+<div class="outline-text-6" id="text-2-3-2-0-1">
+<p>
+b. Refrain: Fixed stanza of text and music that recurs between verses of a strophic song
+c. Many forms also have names
+i. Ballad
+ii. Middle Eastern sama‘i
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orga29d755" class="outline-3">
+<h3 id="orga29d755"><span class="section-number-3">2.4.</span> 4. PROCESSES OF MUSICAL CREATIVITY: COMPOSITION, PERFORMANCE, IMPROVISATION</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-orgd603468" class="outline-4">
+<h4 id="orgd603468"><span class="section-number-4">2.4.1.</span> A. Composition: Process of creating music</h4>
+</div>
+
+<div id="outline-container-org3900113" class="outline-4">
+<h4 id="org3900113"><span class="section-number-4">2.4.2.</span> B. Improvisation: Spontaneous creation of music during performance</h4>
+</div>
+</div>
+
+
+<div id="outline-container-orgd27b521" class="outline-3">
+<h3 id="orgd27b521"><span class="section-number-3">2.5.</span> 5. GEOGRAPHIES OF SOUND</h3>
+<div class="outline-text-3" id="text-2-5">
+</div>
+<div id="outline-container-orgab855ce" class="outline-4">
+<h4 id="orgab855ce"><span class="section-number-4">2.5.1.</span> A. Soundscapes that occur in the same geographic location often overlap and influence one another.</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+i. Musical styles move to different locations and have effects on other styles in different ways.
+ii. Geographical Fugue
+</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-orgf0e2e94" class="outline-2">
+<h2 id="orgf0e2e94"><span class="section-number-2">3.</span> Chapter 2 - Setting: The Study of Local Musics</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org765a16e" class="outline-3">
+<h3 id="org765a16e"><span class="section-number-3">3.1.</span> 1. INTRODUCTION: SETTING THE STAGE</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-orgf32fb75" class="outline-4">
+<h4 id="orgf32fb75"><span class="section-number-4">3.1.1.</span> A. Setting encompasses multiple contexts.</h4>
+<div class="outline-text-4" id="text-3-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org0a047c0"></a>1. Soundscapes within several urban settings<br />
+<ol class="org-ol">
+<li><a id="org24975c9"></a>a. The global rural-urban population balance has tipped in favor of cities.<br /></li>
+</ol>
+</li>
+<li><a id="orgd38a89f"></a>2. Most communities are complex environments.<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org456d2c2" class="outline-3">
+<h3 id="org456d2c2"><span class="section-number-3">3.2.</span> 2. CASE STUDY: ACCRA, GHANA</h3>
+<div class="outline-text-3" id="text-3-2">
+</div>
+<div id="outline-container-org7aafee1" class="outline-4">
+<h4 id="org7aafee1"><span class="section-number-4">3.2.1.</span> A. Hearing Highlife in Accra</h4>
+<div class="outline-text-4" id="text-3-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org75f3811"></a>1. Highlife is a musical style.<br />
+<ol class="org-ol">
+<li><a id="orga787bc3"></a>a. The name originated during the 1920s.<br />
+<div class="outline-text-6" id="text-3-2-1-1-1">
+<p>
+b. Bands played popular tunes for upper-class audiences.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org5d554be"></a>2. Unites several streams of the Ghanaian musical past<br />
+<ol class="org-ol">
+<li><a id="org81c149e"></a>a. Sea chanteys and folk songs<br />
+<div class="outline-text-6" id="text-3-2-1-2-1">
+<p>
+b. Military bands
+c. Piano music and church hymns
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgc4e76df"></a>3. Central to Ghanaian life<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-orgc75db8e" class="outline-4">
+<h4 id="orgc75db8e"><span class="section-number-4">3.2.2.</span> B. Multicultural Accra</h4>
+<div class="outline-text-4" id="text-3-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="org67da126"></a>1. Location makes it a magnet for cultural exchange.<br />
+<ol class="org-ol">
+<li><a id="org999fd87"></a>a. Incorporated into the British Empire<br />
+<div class="outline-text-6" id="text-3-2-2-1-1">
+<p>
+b. English is the official language.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orge4a7871"></a>2. Settlements by the Ga people in the fifteenth century<br />
+<ol class="org-ol">
+<li><a id="orgb90c4b4"></a>a. Portuguese were the first Europeans.<br />
+<div class="outline-text-6" id="text-3-2-2-2-1">
+<p>
+b. They were followed by the Dutch, Danish, and English.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org8f3e1c7"></a>3. Ga ethnic community lent distinctive cuisine and traditional music.<br />
+<ol class="org-ol">
+<li><a id="orgb9a966f"></a>a. Homowo ("Mocking Hunger")Festival<br />
+<div class="outline-text-6" id="text-3-2-2-3-1">
+<p>
+i. Dance
+ii. Drumming accompaniment
+</p>
+
+<p>
+b. Various other festivals
+c. Elaborate funerals
+i. Expensive; can tax the resources of a family
+ii. Full display of music and food
+iii. Voluntary funeral associations: Milo Mianoewo
+iv. Three-day affair
+d. Agbadza dance
+i. Popular social dance performed by Ewe men and women, sometimes at funerals
+ii. Agbadza rhythms are, for many listeners, the most familiar aspects of the music.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org2db1758"></a>4. Drums and their music are linked to other Ghanaian ethnic groups.<br />
+<ol class="org-ol">
+<li><a id="org9ce894a"></a>a. Agbadza rhythms associated with the Ewe people<br />
+<div class="outline-text-6" id="text-3-2-2-4-1">
+<p>
+b. Atumpan: a drum associated with the Akan people
+i. Used for ceremonies by chiefs
+</p>
+
+<p>
+ii.
+iii.
+</p>
+
+<p>
+“Male” and “female” drums played by one drummer Also played as talking drums, used in the past for communication
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org6ef7a04" class="outline-4">
+<h4 id="org6ef7a04"><span class="section-number-4">3.2.3.</span> C. Music in Ghanaian Christian Life</h4>
+<div class="outline-text-4" id="text-3-2-3">
+</div>
+<ol class="org-ol">
+<li><a id="org3d6abb7"></a>1. A substantial amount of musicmaking in Accra occurs within the context of organized religious life.<br />
+<ol class="org-ol">
+<li><a id="org934d6b0"></a>a. Churches on virtually every block<br />
+<div class="outline-text-6" id="text-3-2-3-1-1">
+<p>
+b. The music unites Western musical influences with Ewe rhythmic complexity.
+c. Many churches in Accra hold healing rituals.
+i. The Kwabenya Prayer Camp of the Bethel Prayer Ministry International Church
+ii. Songs, accompanied by instruments, are the main vehicle through which healing is accomplished.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org799ea9b" class="outline-4">
+<h4 id="org799ea9b"><span class="section-number-4">3.2.4.</span> D. Accra's Global Connections</h4>
+<div class="outline-text-4" id="text-3-2-4">
+</div>
+<ol class="org-ol">
+<li><a id="orga99896b"></a>1. The complex blend of local and international give the city's music a distinctive, cosmopolitan flavor.<br />
+<ol class="org-ol">
+<li><a id="orga5a3c97"></a>a. Many different musics can be heard on Ghanaian radio.<br />
+<div class="outline-text-6" id="text-3-2-4-1-1">
+<p>
+b. Accra maintains an active and diverse cassette culture.
+c. A number of musical ensembles reinforce national identity.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org3a6f113" class="outline-3">
+<h3 id="org3a6f113"><span class="section-number-3">3.3.</span> 3. CASE STUDY: MUMBAI, INDIA</h3>
+<div class="outline-text-3" id="text-3-3">
+</div>
+<div id="outline-container-orgf093e27" class="outline-4">
+<h4 id="orgf093e27"><span class="section-number-4">3.3.1.</span> A. Mumbai has been the regional capital since India’s independence from</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<p>
+Britain in 1947.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orge47bb5b"></a>1. A heterogeneous and global city: first settled by the Koli people, ruled later by Hindu and Muslim kingdoms, occupied by various foreign forces<br />
+<ol class="org-ol">
+<li><a id="orgad414da"></a>a. Various linguistic, ethnic, and regional neighborhoods<br />
+<div class="outline-text-6" id="text-3-3-1-1-1">
+<p>
+b. Music ranges from distinctive local practices to national and international genres.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgc1927e7"></a>2. Despite its size and complexity, people acknowledge a sense of unity.<br />
+<ol class="org-ol">
+<li><a id="org779e0a4"></a>a. Various religions, ethnic backgrounds, economic statuses<br />
+<div class="outline-text-6" id="text-3-3-1-2-1">
+<p>
+b. Unity manifest in and supported by musical life
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgb939882" class="outline-4">
+<h4 id="orgb939882"><span class="section-number-4">3.3.2.</span> B. The Ganesh Chaturthi Festival</h4>
+<div class="outline-text-4" id="text-3-3-2">
+</div>
+<ol class="org-ol">
+<li><a id="org8fac558"></a>1. Hindu Ganesh Chaturthi festival leads off the pan-Indian festival season every fall.<br />
+<ol class="org-ol">
+<li><a id="org0573fda"></a>a. Hindus are the majority in Mumbai, but there are many Muslims and Christians.<br />
+<div class="outline-text-6" id="text-3-3-2-1-1">
+<p>
+b. Community-wide festival promoting solidarity and independence from the British
+c. Marks the birthday of Lord Ganesh, a popular Hindu deity
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org1acce01" class="outline-4">
+<h4 id="org1acce01"><span class="section-number-4">3.3.3.</span> C. Music of Mumbai's Ethnic Communities</h4>
+<div class="outline-text-4" id="text-3-3-3">
+</div>
+<ol class="org-ol">
+<li><a id="orga1b5927"></a>1. The Koli people, who were the first residents of the area, continue to be a presence in Mumbai.<br />
+<ol class="org-ol">
+<li><a id="orge47d79c"></a>a. Koli traditional culture is perpetuated.<br />
+<div class="outline-text-6" id="text-3-3-3-1-1">
+<p>
+b. Folk song recordings are distributed and broadcast.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org1cb8814"></a>2. Folk songs in Marathi are heard everywhere in Mumbai.<br />
+<ol class="org-ol">
+<li><a id="orgf820d30"></a>a. Lyrics address universal topics and subjects of local concern<br />
+<div class="outline-text-6" id="text-3-3-3-2-1">
+<p>
+b. Some are reintroduced and popularized through electronic remixes.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org206f2f5"></a>3. North Indian classical music is also actively represented in Mumbai.<br /></li>
+<li><a id="org4e9e58c"></a>4. European classical music has exerted an influence since British arrival.<br />
+<ol class="org-ol">
+<li><a id="org621fae9"></a>a. National Centre for the Performing Arts<br />
+<div class="outline-text-6" id="text-3-3-3-4-1">
+<p>
+b. Bombay Chamber Orchestra
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org4229ad4" class="outline-4">
+<h4 id="org4229ad4"><span class="section-number-4">3.3.4.</span> D. The Mumbai Film Industry</h4>
+<div class="outline-text-4" id="text-3-3-4">
+</div>
+<ol class="org-ol">
+<li><a id="orgdf6a709"></a>1. Film music is everywhere in Mumbai.<br /></li>
+<li><a id="org6262940"></a>2. Indian film industry has mushroomed: Bollywood<br />
+<ol class="org-ol">
+<li><a id="org9a11bb6"></a>a. Mass-marketed films known as "masala movies,” stereotyped, romantic plots with elaborate song and dance interludes throughout<br />
+<div class="outline-text-6" id="text-3-3-4-2-1">
+<p>
+b. Actors became superstars; “playback singers” also greatly admired
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org846be2b"></a>3. Early films used the Hindi and Urdu languages of Northern India.<br />
+<ol class="org-ol">
+<li><a id="org4e7aa2e"></a>a. Urdu language song genre, the ghazal, was very influential.<br />
+<div class="outline-text-6" id="text-3-3-4-3-1">
+<p>
+b. Strophic song accompanied by sarangi, tabla, and harmonium
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org6abedb3"></a>4. Popular music from abroad and the international music industry have deeply influenced Indian film music.<br />
+<ol class="org-ol">
+<li><a id="orgb3adc44"></a>a. Film song Mum-bhai from Bombay Boys<br />
+<div class="outline-text-6" id="text-3-3-4-4-1">
+<p>
+i. Reflects musical style of gangsta rap
+ii. Text is in local dialect with some English phrases
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org944ca4e" class="outline-3">
+<h3 id="org944ca4e"><span class="section-number-3">3.4.</span> 4. CASE STUDY: BOSTON, USA</h3>
+<div class="outline-text-3" id="text-3-4">
+</div>
+<div id="outline-container-org370b998" class="outline-4">
+<h4 id="org370b998"><span class="section-number-4">3.4.1.</span> A. Why Boston?</h4>
+<div class="outline-text-4" id="text-3-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="org9f06c28"></a>1. Boston provides both a long history and exceptional ethnic, institutional, and musical diversity.<br /></li>
+<li><a id="org6fb5e8e"></a>2. Boston provides a stimulating counterpoint to Accra and Mumbai.<br /></li>
+<li><a id="org9b017be"></a>3. In the nineteenth and early twentieth centuries, musical life closely tied to England and Europe.<br /></li>
+<li><a id="org604bc21"></a>4. Many Boston neighborhoods are also home to different socioeconomic and ethnic groups.<br />
+<ol class="org-ol">
+<li><a id="org0776d68"></a>a. Former minorities within the city's longtime mainly EuroAmerican population became a majority.<br />
+<div class="outline-text-6" id="text-3-4-1-4-1">
+<p>
+b. Multicultural mixture of peoples has transformed and gentrified the South End.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgb055cd4"></a>5. Boston has more institutions of higher learning than any other North American city.<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org46f791d" class="outline-4">
+<h4 id="org46f791d"><span class="section-number-4">3.4.2.</span> B. What Elements Make Up Boston's Musical Life?</h4>
+<div class="outline-text-4" id="text-3-4-2">
+</div>
+<ol class="org-ol">
+<li><a id="org72a9dbe"></a>1. The Boston Globe has a weekly musical calendar; provides a starting place for mapping musical Boston.<br /></li>
+<li><a id="orgf11da66"></a>2. Genre categories for musical events include pop and rock; folk, world, and country; jazz, blues and cabaret, etc.<br /></li>
+<li><a id="org81dd1bf"></a>3. Early music, reggae<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org2704baa" class="outline-4">
+<h4 id="org2704baa"><span class="section-number-4">3.4.3.</span> C. Where and When Is Music Performed?</h4>
+<div class="outline-text-4" id="text-3-4-3">
+</div>
+<ol class="org-ol">
+<li><a id="org1c4707c"></a>1. Many soundscapes are associated with specific places and times.<br />
+<ol class="org-ol">
+<li><a id="org11cfab6"></a>a. Symphony Hall<br />
+<div class="outline-text-6" id="text-3-4-3-1-1">
+<p>
+b. Many other well-known performance spaces
+c. Churches
+d. Neighborhoods provide venues for many musical events.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orge12f618"></a>2. Indoor and outdoor phenomena<br />
+<ol class="org-ol">
+<li><a id="org9949b3b"></a>a. Buskers in Harvard Square<br />
+<div class="outline-text-6" id="text-3-4-3-2-1">
+<p>
+b. City streets also provide a venue for special music events.
+i. City Hall
+ii. Boston Common and Public Garden
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org089bfac" class="outline-4">
+<h4 id="org089bfac"><span class="section-number-4">3.4.4.</span> D. Who Makes the Music?</h4>
+<div class="outline-text-4" id="text-3-4-4">
+</div>
+<ol class="org-ol">
+<li><a id="org95562dd"></a>1. Irish<br />
+<ol class="org-ol">
+<li><a id="org1cafa45"></a>a. Immigration since the eighteenth century<br />
+<div class="outline-text-6" id="text-3-4-4-1-1">
+<p>
+b. Irish fiddling in pubs; bagpipes at civic and cultural events
+c. Boston College's Gaelic Roots Festival each summer until 2003
+d. Narrative songs, known as ballads, commemorate important events and memorable individuals.
+i. The Ballad of Buddy McClean
+ii. Simple and repetitive melody
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orge09d632"></a>2. Portuguese<br />
+<ol class="org-ol">
+<li><a id="orgac02c55"></a>a. From Portugal, Cape Verde Islands, and the Azores<br />
+<div class="outline-text-6" id="text-3-4-4-2-1">
+<p>
+b. A musical form popular with Bostonians of Portuguese descent is the fado.
+i. Closely associated with the Portuguese capital, Lisbon
+ii. Fado is sometimes compared with the blues.
+iii. Portuguese Americans hear the fado largely through recordings imported from Portugal.
+iv. Amália Rodrigues is thought to have personified the fado.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org57c668e"></a>3. Cape Verdeans<br />
+<ol class="org-ol">
+<li><a id="orgd315dbf"></a>a. Cape Verde was a way station between Africa, Europe, and Americas during slave trade.<br />
+<div class="outline-text-6" id="text-3-4-4-3-1">
+<p>
+b. Early immigrants to America settled in New England.
+i. Cape Verdeans viewed as black in American society; language and culture kept them separate from African American community
+ii. Distinctive culture expressed in food, music, and dance
+c. Many Cape Verdean Americans have become prominent musicians
+i. Maria de Barros was influenced by Cape Verdean, Latin American, and Caribbean styles.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org34d040c" class="outline-4">
+<h4 id="org34d040c"><span class="section-number-4">3.4.5.</span> E. Boston's Defining Musical Communities</h4>
+<div class="outline-text-4" id="text-3-4-5">
+</div>
+<ol class="org-ol">
+<li><a id="orgd76a392"></a>1. Campus music<br />
+<ol class="org-ol">
+<li><a id="org5f1b23f"></a>a. Many colleges and universities<br />
+<div class="outline-text-6" id="text-3-4-5-1-1">
+<p>
+b. New England Conservatory and Berklee College of Music
+c. In the past, campus musical life mainly drew on Western music ensembles; avant-garde, popular, and international music has proliferated recently.
+i. West African drumming at Tufts University
+ii. North Indian and Senegalese music at MIT
+d. Gamelan are prominent on many college campuses
+i. Indonesian instrumental group
+</p>
+</div>
+</li>
+<li><a id="orgf1b5a7a"></a>a. Instruments made of wood and bamboo, gongs, and instruments of xylophone type<br />
+<div class="outline-text-6" id="text-3-4-5-1-2">
+<p>
+ii. Major traditions from Java and Bali
+iii. Gamelan is ubiquitous in Balinese life, has presence on college campuses around the world through Indonesia’s colonial history.
+</p>
+</div>
+</li>
+<li><a id="org384cb75"></a>a. Symbol of Indonesian culture and national identity<br />
+<div class="outline-text-6" id="text-3-4-5-1-3">
+<p>
+b. Many composers drawn to sound of gamelan
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org1bec464"></a>1. Music organized in rhythmic cycles<br /></li>
+<li><a id="org52cbb86"></a>2. Polyphonic texture<br /></li>
+<li><a id="org8811fc7"></a>3. Beating tones<br /></li>
+<li><a id="org42fe70f"></a>4. Interlocking parts<br /></li>
+<li><a id="orgafa91bb"></a>2. Folk music<br />
+<ol class="org-ol">
+<li><a id="org8f845bf"></a>a. Traditional folk music and folk music revival<br />
+<div class="outline-text-6" id="text-3-4-5-6-1">
+<p>
+b. Boston's importance in the folk music world
+i. Boston's long liberal tradition and its many colleges made it a magnet for singer-songwriters.
+ii. Over two hundred venues for live folk music performance in the Boston area
+iii. M.T.A. Song
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org9305c16"></a>3. Early Music<br />
+<ol class="org-ol">
+<li><a id="org21e7639"></a>a. Boston provided all the ingredients that allowed early music to flourish.<br />
+<div class="outline-text-6" id="text-3-4-5-7-1">
+<p>
+i. Magnet for professional musicians
+ii. Many instrument builders
+</p>
+
+<p>
+b. Early music ensembles incorporate diverse musical styles.
+i. Early music and folk music cultures can converge.
+ii. Barbara Allen
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgba25e8a" class="outline-4">
+<h4 id="orgba25e8a"><span class="section-number-4">3.4.6.</span> F. Boston's Distinctive Musical Profile</h4>
+<div class="outline-text-4" id="text-3-4-6">
+</div>
+<ol class="org-ol">
+<li><a id="org119b24f"></a>a. All three of Boston's major music cultures—campus music, folk music, and early music—are local as well as international, with deep roots in Boston as well as connections to other places.<br />
+<div class="outline-text-6" id="text-3-4-6-0-1">
+<p>
+i. The campus music scene is the most heterogeneous.
+ii. The folk music revival is the most unified.
+iii. Early music frequently crosses over to folk and world music.
+</p>
+
+<p>
+b. University town par excellence
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org2e3f993" class="outline-2">
+<h2 id="org2e3f993"><span class="section-number-2">4.</span> Chapter 3 - Significance: Music’s Meaning in Everyday Life</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org8544440" class="outline-3">
+<h3 id="org8544440"><span class="section-number-3">4.1.</span> 1. INTRODUCTION</h3>
+<div class="outline-text-3" id="text-4-1">
+</div>
+<div id="outline-container-orgfb844cf" class="outline-4">
+<h4 id="orgfb844cf"><span class="section-number-4">4.1.1.</span> A. Significance: Music is able to elicit many ideas and emotions at the same time.</h4>
+<div class="outline-text-4" id="text-4-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org6becd12"></a>1. Meaning shapes our perceptions of music's importance in our lives in three ways:<br />
+<ol class="org-ol">
+<li><a id="org509a88a"></a>a. Sound can imitate or refer to other sounds..<br />
+<div class="outline-text-6" id="text-4-1-1-1-1">
+<p>
+b. Sound can also signify entities or ideas within a soundscape.
+c. Musical sound can also communicate specific meanings within individual cultures or subcultures.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org7141508"></a>2. Importance of a musical piece is determined by a listener’s understanding of a given music's meaning, and perceptions of its value to others within the same soundscape.<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org0553473" class="outline-3">
+<h3 id="org0553473"><span class="section-number-3">4.2.</span> 2. CASE STUDY: MEANING IN SOUTH INDIAN RAGA</h3>
+<div class="outline-text-3" id="text-4-2">
+</div>
+<div id="outline-container-org28c2a60" class="outline-4">
+<h4 id="org28c2a60"><span class="section-number-4">4.2.1.</span> A. Ragas are the Indian system for organizing melodies.</h4>
+<div class="outline-text-4" id="text-4-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgb69fa3f"></a>1. A raga can be associated with the time of day or the season of the year.<br /></li>
+<li><a id="org2a67011"></a>2. Each raga also has emotional connotations within an aesthetic system known as rasa.<br />
+<ol class="org-ol">
+<li><a id="orgd8a3157"></a>a. Raga nilambari is closely associated with lullabies.<br />
+<div class="outline-text-6" id="text-4-2-1-2-1">
+<p>
+b. Can best be represented in Indian sargam notation.
+</p>
+
+<p>
+i. Sa Ri Ga Ma Pa Dha Ni
+ii. Each scale degree within a raga is called a svara.
+iii. Each scale degree is combined with a type of ornament called a gamaka.
+</p>
+
+<p>
+c. The Tamil word for “lullaby” is talattu, or "tongue rocking."
+</p>
+
+<p>
+i. Vocables, araro ariraro, symbolize the motion of rocking a child.
+</p>
+
+<p>
+d. Raga nilambari is mostly used for lullabies.
+i. Considered to have a specific effect on the body
+ii. Thought to have a sleep-inducing effect on both mortals and deities
+iii. Also used in non-lullaby music, though that music is typically still thought to have a connection to sleep and lullabies
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orga3a0c39" class="outline-3">
+<h3 id="orga3a0c39"><span class="section-number-3">4.3.</span> 3. CASE STUDY: THE QUINCEAÑERA</h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+<div id="outline-container-org723a0ac" class="outline-4">
+<h4 id="org723a0ac"><span class="section-number-4">4.3.1.</span> A. La quinceañera, celebrated in Latino communities, marks a teenage</h4>
+<div class="outline-text-4" id="text-4-3-1">
+<p>
+girl’s passage into adulthood.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org3eed264"></a>1. Celebrates a chronological passage while acknowledging a particular cultural or ethnic identity and religious affiliation<br />
+<ol class="org-ol">
+<li><a id="org599b7bd"></a>a. Celebrated with a party or ball<br />
+<div class="outline-text-6" id="text-4-3-1-1-1">
+<p>
+b. A group of female and male friends acts as a court of honor.
+c. Some urban Mexican American women are more likely to perceive the quinceañera less as an initiation into adulthood than as a symbol of historical limitations on women and their choices in society.
+</p>
+
+<p>
+d. The music for the celebration depends in part on whether the family is of Mexican, Puerto Rican, Dominican, or another specific background.
+</p>
+
+<p>
+e. Mexican American
+i. Often hire live mariachi bands for the celebration
+ii. Mariachi is a Mexican instrumental ensemble combining trumpets with plucked and bowed instruments of various types.
+</p>
+</div>
+</li>
+
+<li><a id="org88d35ef"></a>a. Common in Mexico and the southwestern United States<br />
+<div class="outline-text-6" id="text-4-3-1-1-2">
+<p>
+b. Mariachi musicians often dress like charros, the traditional Mexican horsemen or cowboys.
+</p>
+
+<p>
+iii. Many songs performed at la quinceañera are not exclusive to that occasion
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgf3552ba" class="outline-3">
+<h3 id="orgf3552ba"><span class="section-number-3">4.4.</span> 4. CASE STUDY: BAGPIPE MUSIC</h3>
+<div class="outline-text-3" id="text-4-4">
+</div>
+<div id="outline-container-org9514d8e" class="outline-4">
+<h4 id="org9514d8e"><span class="section-number-4">4.4.1.</span> A. The bagpipe is a wind instrument</h4>
+<div class="outline-text-4" id="text-4-4-1">
+<p>
+with an air reservoir squeezed under one arm, a blowpipe or a bellows, and one or more sounding pipes fitted with reeds that vibrate to produce sound.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgd9e37fe"></a>1. The history of the bagpipe extends well beyond its Scottish and Irish roots.<br />
+<ol class="org-ol">
+<li><a id="org6e013fb"></a>a. Archeological evidence of bagpipes in the ancient Middle East<br />
+<div class="outline-text-6" id="text-4-4-1-1-1">
+<p>
+b. The first known mention of a bagpipe (then called the utricularius) dates back to the reign of the Roman emperor Nero.
+c. Scottish bagpipe mentioned in the prologue of The Canterbury Tales.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org8eee332" class="outline-4">
+<h4 id="org8eee332"><span class="section-number-4">4.4.2.</span> B. Sound</h4>
+<div class="outline-text-4" id="text-4-4-2">
+</div>
+<ol class="org-ol">
+<li><a id="orgad94f3b"></a>1. The instrument most widely played today in Irish and Scottish bagpipe bands is the Scottish Highland bagpipe.<br /></li>
+<li><a id="org7e1a4a5"></a>2. Characteristic bagpipe ornaments are called grace notes or gracings.<br />
+<ol class="org-ol">
+<li><a id="org4bf613d"></a>a. The term cutting refers to the insertion of grace notes to divide a sustained sound.<br />
+<div class="outline-text-6" id="text-4-4-2-2-1">
+<p>
+b. Doubling describes a group of several grace notes.
+i. A birl is a one type of doubling.
+ii. Grips are several rapid grace notes in the lower part of the chanter's range.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgec4be7b"></a>3. Ireland has its own pìob mhór, or "great pipes."<br />
+<ol class="org-ol">
+<li><a id="org2f9bd83"></a>a. Smaller than the Scottish highland pipes<br />
+<div class="outline-text-6" id="text-4-4-2-3-1">
+<p>
+b. Has a bellows rather than a blowpipe
+c. Also known as the uilleann or "union" pipes.
+i. In Ireland both highland (outdoor) and uilleann (indoor) pipes are played.
+</p>
+
+<p>
+ii.
+</p>
+
+<p>
+Only Scottish-style pìob mhór are allowed in international competitions.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org3ab3046"></a>4. Canntaireachd is a vocal style that imitates the pipes.<br />
+<ol class="org-ol">
+<li><a id="orgf2254cf"></a>a. Vocables indicate bagpipe melodies and their gracings.<br />
+<div class="outline-text-6" id="text-4-4-2-4-1">
+<p>
+b. There were several systems of canntaireachd.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org004b396"></a>5. Bagpipes are strongly associated with men and historically male institutions such as the military.<br />
+<ol class="org-ol">
+<li><a id="org2ecad03"></a>a. Women were not typically prohibited from playing, but commonly were restricted to step dancing.<br />
+<div class="outline-text-6" id="text-4-4-2-5-1">
+<p>
+b. In recent decades, women have been encouraged to take up bagpipes.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org7065389" class="outline-4">
+<h4 id="org7065389"><span class="section-number-4">4.4.3.</span> C. Setting</h4>
+<div class="outline-text-4" id="text-4-4-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgbced74e"></a>1. Death and commemoration<br />
+<ol class="org-ol">
+<li><a id="org863c656"></a>a. Bagpipes have been linked symbolically with warfare and death since 1549.<br />
+<div class="outline-text-6" id="text-4-4-3-1-1">
+<p>
+b. Piobaireachd (pibroch) is a repertory of compositions that emerged through the MacCrimmon family of pipers.
+i. Consists of:
+</p>
+</div>
+</li>
+<li><a id="orgc1d34b9"></a>a. The ground, or melody, which is always slow and longer than a march or dance tune<br />
+<div class="outline-text-6" id="text-4-4-3-1-2">
+<p>
+b. Extended variations on the ground
+ii. Has long been used as a lament to commemorate a person’s death
+c. In connection with the military, bagpipes have been associated with British imperialism.
+i. Traditional dress, the kilt
+ii. Heard throughout the Scottish and Irish diaspora
+iii. Civic duties of pipers were absorbed into modern institutional settings.
+</p>
+</div>
+</li>
+<li><a id="org6357ccc"></a>a. Bagpipe bands associated with US police and fire departments<br />
+<div class="outline-text-6" id="text-4-4-3-1-3">
+<p>
+b. After the attacks on September 11, 2001, the FDNY Pipes and Drums squad played at the funeral of every firefighter lost in the line of duty
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org8f56413"></a>2. Entertainment and dance<br />
+<ol class="org-ol">
+<li><a id="orgba09050"></a>a. Today the pipes are still heard at ceilidhs, festive gatherings that include music, socializing, and dancing.<br />
+<div class="outline-text-6" id="text-4-4-3-2-1">
+<p>
+i. Rooted in public dances that flourished in the eighteenth century.
+ii. First consisted of a reel, a dance played by the bagpipe in combination with a slower strathspey.
+</p>
+
+<p>
+b. The term ceilidh now refers to any social-musical event associated with Scottish or Irish traditions.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org17ae97e"></a>3. Competitions and concerts<br />
+<div class="outline-text-5" id="text-4-4-3-3">
+<p>
+a. Occasions of competition and public display have long been an important part of the history of piping.
+</p>
+
+<p>
+b. William Cummings
+c. Competitive performances featuring several bagpipe bands became common.
+d. The bagpipe thus sustains a large musical repertory rooted in its history in Scotland and Ireland but also has traveled widely over the last century and a half.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgbe6dd34" class="outline-4">
+<h4 id="orgbe6dd34"><span class="section-number-4">4.4.4.</span> D. Significance</h4>
+<div class="outline-text-4" id="text-4-4-4">
+</div>
+<ol class="org-ol">
+<li><a id="org8e33018"></a>1. Many meanings have accumulated over time, inspired by the pipes' presence in a range of settings.<br /></li>
+<li><a id="org113a98e"></a>2. Bagpipe music continues to accrue new layers of significance.<br />
+<ol class="org-ol">
+<li><a id="orgfe4a30d"></a>a. The 1979 film The Onion Field, and the book on which it was based, provide a fine example of the multiple meanings of the bagpipes, as constructed through the lens of literature and film.<br /></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-orgd0e0edb" class="outline-2">
+<h2 id="orgd0e0edb"><span class="section-number-2">5.</span> Chapter 4 - Music and Migration</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-org33ef674" class="outline-3">
+<h3 id="org33ef674"><span class="section-number-3">5.1.</span> I. INTRODUCTION</h3>
+<div class="outline-text-3" id="text-5-1">
+</div>
+<div id="outline-container-org8192cf6" class="outline-4">
+<h4 id="org8192cf6"><span class="section-number-4">5.1.1.</span> A. Music is important to the migration process for several reasons</h4>
+<div class="outline-text-4" id="text-5-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgf58a6f3"></a>1. Music is portable.<br />
+<ol class="org-ol">
+<li><a id="org24decc0"></a>a. In the past, music traveled only with human migration.<br />
+<div class="outline-text-6" id="text-5-1-1-1-1">
+<p>
+b. Recently, modern transportation has allowed for mass movements to occur more quickly.
+c. Recording technology has reinforced musical transmission.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgd05ac42"></a>2. The presence of numerous transplanted musical traditions in a single place can have a variety of outcomes.<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org3ce5a3f" class="outline-3">
+<h3 id="org3ce5a3f"><span class="section-number-3">5.2.</span> II. VOLUNTARY MIGRATION</h3>
+<div class="outline-text-3" id="text-5-2">
+</div>
+<div id="outline-container-org383f9cc" class="outline-4">
+<h4 id="org383f9cc"><span class="section-number-4">5.2.1.</span> A. Voluntary migration is the movement of people to a new region by choice, motivated by an attraction to the new locale.</h4>
+<div class="outline-text-4" id="text-5-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org6d38c55"></a>1. Each wave of migration to North America has had its impact.<br />
+<ol class="org-ol">
+<li><a id="orge3015ae"></a>a. British immigrants, beginning in the seventeenth century, carried ballads with them.<br />
+<div class="outline-text-6" id="text-5-2-1-1-1">
+<p>
+b. The ballads became associated with the mountains of Virginia and Kentucky.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orge508fcd"></a>2. Two important transmission processes for music:<br />
+<ol class="org-ol">
+<li><a id="org599492b"></a>a. Oral transmission: Music is passed from person to person through performance.<br />
+<div class="outline-text-6" id="text-5-2-1-2-1">
+<p>
+b. Written transmission: Music is passed from person to person in the form of written sources.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org262d9bc" class="outline-4">
+<h4 id="org262d9bc"><span class="section-number-4">5.2.2.</span> B. Case Study: The Chinese Migration</h4>
+<div class="outline-text-4" id="text-5-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="org1575b87"></a>1. Chinese immigration, which began around 1850, was largely voluntary, motivated in part by the attraction that the United States held for many.<br />
+<ol class="org-ol">
+<li><a id="orgcfa8bb6"></a>a. Some Chinese immigrants called the United States Jinshan, meaning “Gold Mountain.”<br />
+<div class="outline-text-6" id="text-5-2-2-1-1">
+<p>
+i. First immigrants were attracted by the California gold rush.
+ii. Later immigrants came to work on the transcontinental railroad and to escape various difficult conditions in China.
+</p>
+
+<p>
+b. Episodic immigration history
+c. Many early Chinese immigrants considered themselves temporary residents in the United States.
+i. Hoped They hoped to make money and return home.
+ii. Since 1960, most Chinese immigrants have come to settle permanently.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org1dab82d"></a>2. The song Ng Bak Loi Gimsaan (“Uncle Ng Comes to the Gold Mountain”) traces and recounts details of the Chinese immigration process through music.<br />
+<ol class="org-ol">
+<li><a id="orgc28d81a"></a>a. Traditional southeastern song genre called muk’yu (muyu).<br />
+<div class="outline-text-6" id="text-5-2-2-2-1">
+<p>
+i. Muyu are both transmitted orally and written down in songbooks.
+ii. Muyu can be sung by men or women and are performed on a variety of occasions, both public and private.
+iii. Muyu texts tell of the concerns of everyday life.
+iv.Written muyu have a fixed form.
+① Singer adds vocables in performance.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org0bd50f2" class="outline-4">
+<h4 id="org0bd50f2"><span class="section-number-4">5.2.3.</span> C. Case Study: Arab Migration from the Middle East</h4>
+<div class="outline-text-4" id="text-5-2-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgcfdb4d7"></a>1. Waves of immigration<br />
+<ol class="org-ol">
+<li><a id="org2cefde6"></a>a. During the 1870s, immigrants from Greater Syria discovered an “entrepreneurial Eden” in the United States.<br />
+<div class="outline-text-6" id="text-5-2-3-1-1">
+<p>
+b. Migration after dislocation by the Arab-Israeli conflict
+i. Chain migration
+ii. Constant flow of new immigrants kept connections to the homeland alive.
+c. Hanan Harouni is a Lebanese singer who settled in New York City after World War II.
+i. Hanan sings mawwal, a traditional Arabic form that alternates sections in free and regular rhythms.
+① The song in the recording is set in a contemporary Arab musical mode called huzam.
+② Text is colloquial in language and content, commenting on the pain of migration.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org03554d2"></a>2. Arab Americans maintain close ties to their homelands, and many of those connections are reaffirmed and symbolized through song.<br />
+<ol class="org-ol">
+<li><a id="orga9ad332"></a>a. Lebanese singer Fairuz (Nuhad Haddad) in Las Vegas in 1999<br />
+<div class="outline-text-6" id="text-5-2-3-2-1">
+<p>
+i. Used traditional instruments such as the ‘ud.
+ii. Combined traditional Lebanese instruments with Western instruments such as the violin
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgbe221eb" class="outline-3">
+<h3 id="orgbe221eb"><span class="section-number-3">5.3.</span> III.FORCED MIGRATION</h3>
+<div class="outline-text-3" id="text-5-3">
+</div>
+<div id="outline-container-org0a60c33" class="outline-4">
+<h4 id="org0a60c33"><span class="section-number-4">5.3.1.</span> A. Case Study: African Forced Migrations</h4>
+<div class="outline-text-4" id="text-5-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org568f14b"></a>1. Two causes of forced migration—conquest and slavery—continue to reverberate in the background of American life and musical styles.<br />
+<ol class="org-ol">
+<li><a id="org4685068"></a>a. Conquest, the westward expansion across North America, is celebrated in US popular culture, but:<br />
+<div class="outline-text-6" id="text-5-3-1-1-1">
+<p>
+i. Forced movement of millions of Africans through the slave trade
+ii. Native American populations severely reduced through warfare and disease.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgdc5bdb6"></a>2. Many important musical repertories show traces of the painful experiences of African Americans during the slave era that followed their forced movement to the US.<br />
+<ol class="org-ol">
+<li><a id="org7ce2bea"></a>a. Among the most influential of these repertories is the black spiritual.<br />
+<div class="outline-text-6" id="text-5-3-1-2-1">
+<p>
+i. Musical expression of slaves who converted to Christianity
+ii. The first collection of spirituals was published under the title Slave Songs of the United States
+① From oral tradition; originally sung in unison
+② Later sung in call-and-response style
+</p>
+
+<p>
+iii. Fisk Jubilee Singers traveled internationally and included spirituals in their public performances.
+iv. Folk singers learned spirituals through oral transmission as well as from early recordings.
+① Huddie Ledbetter(“Leadbelly”)
+v. Black concert artists inspired by Fisk Jubilee Singers, notated sources, and renditions in the oral tradition, began to perform on the concert stage.
+① Paul Robeson
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org3c5f89a" class="outline-4">
+<h4 id="org3c5f89a"><span class="section-number-4">5.3.2.</span> B. Case Study: The Vietnamese Migration</h4>
+<div class="outline-text-4" id="text-5-3-2">
+</div>
+<ol class="org-ol">
+<li><a id="orge6303a7"></a>1. The history of the present-day Vietnamese diaspora had its roots in the midseventeenth century.<br />
+<ol class="org-ol">
+<li><a id="orgf281257"></a>a. French missionaries and French colonial control<br />
+<div class="outline-text-6" id="text-5-3-2-1-1">
+<p>
+i. Ho Chi Minh and the Communist North
+ii. Division into North and South in 1954
+</p>
+
+<p>
+b. American presence and the Vietnam War
+i. Many Vietnamese forced to emigrate after the fall of Saigon
+ii. Later waves of Vietnamese refugees fled mainly in small boats and makeshift rafts.
+iii. Seventy percent immigrated to the United States, particularly the Gulf Coast and Texas.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org625940a"></a>2. Vietnamese diaspora communities in large urban centers have also hosted large popular musical events called da vu, or “night dance.”<br />
+<ol class="org-ol">
+<li><a id="org9edb8f8"></a>a. These growing Vietnamese communities actively cultivate their music traditions.<br />
+<div class="outline-text-6" id="text-5-3-2-2-1">
+<p>
+b. Visiting troupes of musicians from Vietnam occasionally travel to diaspora communities.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgc727240"></a>3. The sound of Vietnamese instruments is often intended to elicit a strong emotional response as well.<br />
+<ol class="org-ol">
+<li><a id="orgfd179ae"></a>a. Dan nguyet, a lute<br />
+<div class="outline-text-6" id="text-5-3-2-3-1">
+<p>
+b. Dan bau, a monochord instrument
+i. Consists of a single string, a resonating chamber, and a small bamboo shaft
+ii. Can produce a wide variety of sounds, even an imitation of the human voice
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org62f8aca"></a>4. Music in Vietnamese refugee camps provides examples of how music is influenced by forced migration.<br />
+<ol class="org-ol">
+<li><a id="org1eacc1b"></a>a. Many different musical styles.<br />
+<div class="outline-text-6" id="text-5-3-2-4-1">
+<p>
+b. People sang sad songs and love songs as an expression of political ideology.
+c. Pham Duy’s music was heard in the camps, and he remains the bestknown Vietnamese composer in the diaspora.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org54ec893" class="outline-4">
+<h4 id="org54ec893"><span class="section-number-4">5.3.3.</span> C. THE NATIONAL ROAD SONG CYCLE</h4>
+<div class="outline-text-4" id="text-5-3-3">
+</div>
+<ol class="org-ol">
+<li><a id="org7050cc1"></a>1. Pham Duy’s Con Duong Cai Quan (The National Road: A Voyage through Vietnam) is a song cycle incorporating several different streams of musical influence.<br />
+<ol class="org-ol">
+<li><a id="org240d3e2"></a>a. Tells of a traveler’s journey through Vietnam from north to south<br />
+<div class="outline-text-6" id="text-5-3-3-1-1">
+<p>
+b. Texts celebrate the cultural diversity and regional differences in the country and trace aspects of its history
+c. Hybrid musical language with both Vietnamese and Western elements
+i. One style, called tan nhac, combined Western instruments and Vietnamese lyrics
+ii. Nineteen songs divided into three sections representing:
+① north Vietnam
+② central Vietnam
+③ south Vietnam
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgf180d58"></a>2. Sound<br />
+<ol class="org-ol">
+<li><a id="org28adf0f"></a>a. Song Come to Hue, Come for solo female voice<br />
+<div class="outline-text-6" id="text-5-3-3-2-1">
+<p>
+i. Pentatonic scale; modulation
+</p>
+
+<p>
+ii. The harmony supports the pentatonic melodies.
+</p>
+
+
+<p>
+b. Song Who Is Walking on the Endless Road for chorus and soloist
+</p>
+
+<p>
+i. Combination of the word ho (pronounced “haw”), which means “to raise the voice,” joined with vocables, signals Vietnamese roots
+</p>
+
+<p>
+ii. Men’s and women’s voices alternate in call and response
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+
+<li><a id="orgebd4d28"></a>3. Setting<br />
+<ol class="org-ol">
+<li><a id="org3824ff4"></a>a. Pham Duy’s compositions, like most Vietnamese musics, provide a basis for reinterpretation, easily adapting to different performance contexts.<br />
+<div class="outline-text-6" id="text-5-3-3-3-1">
+<p>
+i. Come to Hue, Come
+</p>
+
+<p>
+① Amateur singer and pianist
+</p>
+
+<p>
+② Followed by popular dance music presented by local family combo with electric guitars, keyboards, drums, and singer
+</p>
+
+<p>
+ii. Who Is Walking on the Endless Road
+</p>
+
+<p>
+① Arranged for synthesizer and performed in a symphonic version
+</p>
+
+<p>
+② Bridges the gap between Vietnamese immigrants and their children born in the diaspora
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+
+<li><a id="org080dac6"></a>4. Significance<br />
+<ol class="org-ol">
+<li><a id="orgc66f50f"></a>a. The National Road had a powerful significance for the composer and evoked a deep response from Vietnamese of the diaspora<br />
+<div class="outline-text-6" id="text-5-3-3-4-1">
+<p>
+b. Intended as a musical realization of a unified, independent Vietnam, until recently it survived only abroad as an important musical symbol of the continuing divide between the Vietnamese in their home country and those in the diaspora.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org7bd72d7" class="outline-2">
+<h2 id="org7bd72d7"><span class="section-number-2">6.</span> Chapter 5 – Music and Memory</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org8f5ef57" class="outline-3">
+<h3 id="org8f5ef57"><span class="section-number-3">6.1.</span> I. INTRODUCTION</h3>
+<div class="outline-text-3" id="text-6-1">
+</div>
+<div id="outline-container-org3a83206" class="outline-4">
+<h4 id="org3a83206"><span class="section-number-4">6.1.1.</span> A. Musical transmission is dependent on processes of remembering.</h4>
+<div class="outline-text-4" id="text-6-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgecbfb9b"></a>1. Song texts and melodies can remind us of people, places, and events.<br /></li>
+
+<li><a id="orgea219ae"></a>2. Through repeated performances over time and in different settings, music draws on a partly subconscious bank of memories, sometimes triggering long-forgotten recollections and emotions.<br /></li>
+
+<li><a id="org32ed648"></a>3. The physical processes involved in musicmaking calls on what has been termed “habit memory.”<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org3c30999" class="outline-4">
+<h4 id="org3c30999"><span class="section-number-4">6.1.2.</span> B. When we participate in or hear a musical performance, we experience a feeling similar to that in which a memory was first generated.</h4>
+<div class="outline-text-4" id="text-6-1-2">
+</div>
+<ol class="org-ol">
+<li><a id="orge7edcb7"></a>1. The study of musical transmission requires us to think about the processes of remembering.<br /></li>
+
+<li><a id="orgcab1bb3"></a>2. Musicmaking depends on both individual and shared, or collective, memories.<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgf05c479" class="outline-3">
+<h3 id="orgf05c479"><span class="section-number-3">6.2.</span> II. REMEMBERING THROUGH MUSIC</h3>
+<div class="outline-text-3" id="text-6-2">
+</div>
+<div id="outline-container-org9e95417" class="outline-4">
+<h4 id="org9e95417"><span class="section-number-4">6.2.1.</span> A. Case Study: The Corrido</h4>
+<div class="outline-text-4" id="text-6-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org775929e"></a>1. The Mexican corrido (ballad) is an example of the ability of music to convey memories of particular places, people, and events.<br />
+<ol class="org-ol">
+<li><a id="orgcfab5e9"></a>a. In the corrido, as in most other ballads, memories are carried primarily in the text.<br />
+<div class="outline-text-6" id="text-6-2-1-1-1">
+<p>
+b. The melody supports that text and helps the singer recall it during a performance.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org5a85b96"></a>2. The corrido first emerged in the second half of the nineteenth century as a song genre shaped by intercultural conflict.<br />
+<ol class="org-ol">
+<li><a id="orge060434"></a>a. Influenced by conflicts between Mexicans and Americans in the Mexican–US border region<br />
+<div class="outline-text-6" id="text-6-2-1-2-1">
+<p>
+b. Became a medium through which Mexicans and Mexican Americans could respond to American domination
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="orgc68e8f0"></a>3. Corridos of the late nineteenth and early twentieth centuries focused on the actions of important individuals, recounted in hero corridos.<br />
+<ol class="org-ol">
+<li><a id="orgfc0a955"></a>a. The corrido Gregorio Cortez is a famous example of this repertory.<br />
+<div class="outline-text-6" id="text-6-2-1-3-1">
+<p>
+i. Portrayal of larger-than-life Mexican figures
+ii. Important to Texan Mexicans
+iii. The corrido underwent a period of decline and transformation after its great popularity in the 1910s and 1920s.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org7fd277b"></a>4. The texts about heroes were replaced with what have been termed victim corridos.<br />
+<ol class="org-ol">
+<li><a id="org831ebd1"></a>a. Emerged in the 1930s just as Mexican American society was becoming part of a more urban, Americanized culture<br />
+<div class="outline-text-6" id="text-6-2-1-4-1">
+<p>
+b. Used song to inspire the Mexican American community to take collective action on the victims' behalf
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgdebcfe8"></a>5. New revolutionary corrido repertory arose that commented on social and economic hardships.<br />
+<ol class="org-ol">
+<li><a id="orgacb070c"></a>a. Critiqued the Mexican political situation in the 1990s<br />
+<div class="outline-text-6" id="text-6-2-1-5-1">
+<p>
+6. Narco-corridos, or "drug ballads," also have beenpopular in recent decades.
+</p>
+</div>
+</li>
+<li><a id="org48adf9a"></a>a. Compared with gangsta rap<br />
+<div class="outline-text-6" id="text-6-2-1-5-2">
+<p>
+b. Widely performed by popular groups such as Los Tigres del Norte
+i. Intended as constructive criticism, not praise
+ii. Many of the songs speak of the difficult lives of Mexican immigrants to the United States.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgc76a53f"></a>7. In the twenty-first century, the corrido continues to chronicle major events and ensure they are remembered through music.<br />
+<ol class="org-ol">
+<li><a id="org0486005"></a>a. Black September commemorates the attacks of September 11, 2001.<br />
+<div class="outline-text-6" id="text-6-2-1-6-1">
+<p>
+b. The Ballad of Osama bin Laden adapts the classic hero corrido format to interrogate the motives of the commander of the same attacks.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orge7b3abd" class="outline-3">
+<h3 id="orge7b3abd"><span class="section-number-3">6.3.</span> III. COMMEMORATING THROUGH MUSIC</h3>
+<div class="outline-text-3" id="text-6-3">
+</div>
+<div id="outline-container-org8974c0d" class="outline-4">
+<h4 id="org8974c0d"><span class="section-number-4">6.3.1.</span> A. Case Study: The Jazz Funeral</h4>
+<div class="outline-text-4" id="text-6-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org984d750"></a>1. Marks the death of a musician or some other person of note.<br /></li>
+<li><a id="org3d3ea00"></a>2. Louis “Satchmo” Armstrong had two funerals:<br />
+<ol class="org-ol">
+<li><a id="org75e781d"></a>a. A conventional ceremony near his home in New York City<br />
+<div class="outline-text-6" id="text-6-3-1-2-1">
+<p>
+b. Old-fashioned jazz funeral in New Orleans, the city of his birth
+</p>
+
+<p>
+i. Features a jazz band, which improvises on both the melody and accompanying parts of popular songs
+</p>
+</div>
+</li>
+
+<li><a id="org5ae3f71"></a>a. The band leads a procession, followed by a hearse carrying the coffin, mourners, and members of the funeral association<br />
+<div class="outline-text-6" id="text-6-3-1-2-2">
+<p>
+ii. At the cemetery, the band plays hymns (sacred songs for worship) and dirges (slow instrumental laments)
+</p>
+
+<p>
+iii. Music played during the return from the cemetery is a fast, lively repertory, in accordance with African American belief that the funeral is not only a farewell, but also a celebration of the person's life and a time for rejoicing.
+</p>
+</div>
+</li>
+
+<li><a id="org8cadd27"></a>a. Onlookers join the second line, a crowd that follows the band and the mourners as they process through the streets.<br />
+<div class="outline-text-6" id="text-6-3-1-2-3">
+<p>
+b. Once the band is a respectful distance from cemetery, it plays lively marches or popular tunes that contrast with the solemn hymns played on the way to the cemetery.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-orgf86d317" class="outline-3">
+<h3 id="orgf86d317"><span class="section-number-3">6.4.</span> IV. RECONCILING MEMORIES THROUGH MUSIC</h3>
+<div class="outline-text-3" id="text-6-4">
+</div>
+<div id="outline-container-org25bb773" class="outline-4">
+<h4 id="org25bb773"><span class="section-number-4">6.4.1.</span> A. Case Study: The Syrian Jewish Pizmon</h4>
+<div class="outline-text-4" id="text-6-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="org4a74852"></a>1. Music can sustain memories that seem at odds with the present-day settings in which the music is transmitted.<br />
+<ol class="org-ol">
+<li><a id="org5b6b48f"></a>a. Pizmon literally means “adoration” or “praise.”<br />
+<div class="outline-text-6" id="text-6-4-1-1-1">
+<p>
+i. Most of these hymns consist of Hebrew texts set to melodies borrowed from Middle Eastern Arab music.
+ii. Syrian Jews have continued to sing these hymns and have also composed new pizmonim.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org1bb07cc"></a>2. The sound of the pizmon<br />
+<div class="outline-text-5" id="text-6-4-1-2">
+<p>
+a. The pizmon tradition had its beginnings in the late Middle Ages.
+i. Contrafactum is the use of a preexisting melody with new text.
+ii. The use of well-known, preexisting melodies ensures that the new text will be remembered more easily.
+</p>
+
+<p>
+b. Most pizmonim borrow tunes from Arab songs and are based on the Arab musical system of maqam.
+i. Maqam are the core of Arab music.
+ii. Each maqam is a category of melodies that share pitch content, range, and characteristic ornaments.
+iii. There are at least a dozen important categories of maqamat, each distinguished by its pitch content and ornaments.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orge117467"></a>a. Scales based on tetrachords<br />
+<div class="outline-text-6" id="text-6-4-1-2-1">
+<p>
+c. Syrian Jews prescribe one maqam to be emphasized each week.
+Selected pizmonim and important prayers are sung in the weekly maqam.
+i. Maqam nahawand from the late nineteenth century has remained popular into the present time.
+</p>
+</div>
+</li>
+<li><a id="org301705b"></a>a. Sounds similar to the minor scale of Western music.<br />
+<div class="outline-text-6" id="text-6-4-1-2-2">
+<p>
+b. Western notation helped standardize maqam.
+</p>
+
+<p>
+c. Pizmon Attah El Kabbir is an interesting case study of musical transmission. It spread as Syrian Jews migrated from Syria to other places.
+</p>
+
+<p>
+d. Has a layali (improvised vocal introduction) that establishes the maqam of the subsequent song.
+</p>
+
+<p>
+e. Pizmon melody maintains a well-known Arab three-part form, the muwashshah.
+</p>
+
+<p>
+ii. Maqam ajam is very similar to the Western major scale.
+</p>
+</div>
+</li>
+
+<li><a id="orgdf57be1"></a>a. Resembles Western melodies<br />
+<div class="outline-text-6" id="text-6-4-1-2-3">
+<p>
+b. Not based on Arab sources
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgc905a27"></a>3. The settings of pizmon performance<br />
+<ol class="org-ol">
+<li><a id="org959cb55"></a>a. Most performed to celebrate births, bar mitzvahs, weddings, etc.<br />
+<div class="outline-text-6" id="text-6-4-1-3-1">
+<p>
+i. A new pizmon is often composed for the birth of a baby.
+</p>
+
+<p>
+ii. If a given pizmon becomes popular, it can be performed at subsequent events and enter the chain of musical transmission.
+</p>
+
+
+<p>
+b. Important setting for pizmon transmission is a Sabbath afternoon songfest called the Sebet
+</p>
+
+<p>
+i. Plays a major role in Syrian Jews’ ceremonial and social life, including helping to reinforce memories
+</p>
+
+<p>
+ii. Transplanted through migration
+</p>
+
+<p>
+iii. Includes only unaccompanied pizmonim sung in Hebrew
+</p>
+
+<p>
+c. Pizmonim are also performed at parties known as haflah that celebrate special occasions, such as anniversaries.
+</p>
+
+<p>
+i. Performers sing the original songs from which the pizmon melodies have been taken, complete with their Arabic texts.
+</p>
+
+<p>
+ii. Songs in Arabic with instrumental accompaniment.
+</p>
+
+<p>
+4. Musical sources for diaspora pizmonim
+</p>
+</div>
+</li>
+
+<li><a id="org6ced8f7"></a>a. Pizmon melodies have been drawn from many sources, including from music traditions Syrian Jews encountered in their new homelands.<br />
+<div class="outline-text-6" id="text-6-4-1-3-2">
+<p>
+b. Mifalot Elohim, written for a wedding in New York City, became a popular pizmon for a time.
+</p>
+
+<p>
+i. Based on the groom’s high school song, which had also been based on the Christmas carol O Tannenbaum.
+</p>
+
+<p>
+ii. Rarely sung in Syrian Jewish circles because they began to associate its melody with Christmas rather than the school song.
+</p>
+
+<p>
+iii. Classified as maqam ajam, even though not an Arab source.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgcb4dfce"></a>5. Continuing use of Arab melodies<br />
+<ol class="org-ol">
+<li><a id="org7abc636"></a>a. Pizmonim depend most heavily on the Arab musical tradition for their inspiration.<br />
+<div class="outline-text-6" id="text-6-4-1-4-1">
+<p>
+b. Pizmon Ramah Evarai was composed for a bar mitzvah.
+</p>
+
+<p>
+i. Also used for the dedication of a newly copied Torah scroll the same day as the bar mitzvah.
+</p>
+
+<p>
+ii. Based on the Arab song The Wheat Song
+</p>
+</div>
+</li>
+
+<li><a id="org98bb54a"></a>a. The Wheat Song was composed by Muhammad Abd alWahhab, who is known as an innovator in Arab musical style.<br />
+<div class="outline-text-6" id="text-6-4-1-4-2">
+<p>
+b. The Wheat Song was very popular.
+</p>
+</div>
+</li>
+<li><a id="orgd735620"></a>a. Composed for a movie in 1946<br />
+<div class="outline-text-6" id="text-6-4-1-4-3">
+<p>
+b. Recordings were circulated widely
+</p>
+
+<p>
+iii. The pizmon composer Louis Massry chose the melody of The Wheat Song because it was memorable.
+</p>
+</div>
+</li>
+
+<li><a id="org5c9c6b6"></a>a. By borrowing a melody from this song, the pizmon carries memories of Middle Eastern life.<br />
+<div class="outline-text-6" id="text-6-4-1-4-4">
+<p>
+b. The Hebrew contrafactum text has many hidden meanings, with references to Jewish law and custom.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-orga99f102" class="outline-2">
+<h2 id="orga99f102"><span class="section-number-2">7.</span> Chapter 6 - Music, Mobility, and the Global Marketplace</h2>
+<div class="outline-text-2" id="text-7">
+</div>
+<div id="outline-container-org998ed30" class="outline-3">
+<h3 id="org998ed30"><span class="section-number-3">7.1.</span> 1. INTRODUCTION</h3>
+<div class="outline-text-3" id="text-7-1">
+</div>
+<div id="outline-container-org91d6f14" class="outline-4">
+<h4 id="org91d6f14"><span class="section-number-4">7.1.1.</span> A. Global forces shape present-day musical transmission and performance.</h4>
+<div class="outline-text-4" id="text-7-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="org65e0419"></a>1. New settings for musical performance have opened new channels of musical transmission.<br />
+<ol class="org-ol">
+<li><a id="org3c12faa"></a>a. International educational exchanges, recordings, broadcasts, festivals<br />
+<div class="outline-text-6" id="text-7-1-1-1-1">
+<p>
+b. Historical roots in the nineteenth-century colonial era and exhibition culture in Europe and the United States
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="orgdfacc1c"></a>2. The juxtaposition of musical traditions within the same settings has also resulted in exchanges among musicians who did not formerly interact.<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org3885515" class="outline-4">
+<h4 id="org3885515"><span class="section-number-4">7.1.2.</span> B. All micromusics—small musical units within big music cultures—can be situated within three interacting and overlapping levels.</h4>
+<div class="outline-text-4" id="text-7-1-2">
+</div>
+<ol class="org-ol">
+<li><a id="org082511e"></a>1. Subculture: includes local, personal, familial, occupational, and community networks<br /></li>
+<li><a id="orga5bb998"></a>2. Interculture: subcultures' influence on each other through economic or commercial connections, proximity, or affinity<br /></li>
+<li><a id="org26732c2"></a>3. Superculture: shaped by the power of the state and by the national and global economy<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org108594c" class="outline-3">
+<h3 id="org108594c"><span class="section-number-3">7.2.</span> 2. TRAVEL AND TOURISM</h3>
+<div class="outline-text-3" id="text-7-2">
+</div>
+<div id="outline-container-org12936e9" class="outline-4">
+<h4 id="org12936e9"><span class="section-number-4">7.2.1.</span> A. Case Study: The Hawaiian Sound</h4>
+<div class="outline-text-4" id="text-7-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org3d521d7"></a>1. The exhibition and sale of music as part of tourism became a lucrative<br />
+<div class="outline-text-5" id="text-7-2-1-1">
+<p>
+industry in many places long before the middle and late twentieth
+century.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org7324729"></a>a. Sounds of the steel guitar and ukulele, as well as the swaying movements of the hula dance, became inseparable from the burgeoning Pacific tourist trade.<br />
+<div class="outline-text-6" id="text-7-2-1-1-1">
+<p>
+b. These sounds and sights came to signify Hawaii.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgd2762a4"></a>2. Some of the foremost performers responsible for the global marketing of Hawaiian music were not native Hawaiians.<br />
+<ol class="org-ol">
+<li><a id="org507ab50"></a>a. The Moe family spent virtually all of their adult lives abroad.<br />
+<div class="outline-text-6" id="text-7-2-1-2-1">
+<p>
+i. Born in Samoa; moved to Hawaii at an early age
+</p>
+
+<p>
+ii. The brothers eventually split up into separate
+ensembles.
+</p>
+
+
+<p>
+b. Signed in 1941 by the impresario Felix Mendelssohn
+</p>
+
+<p>
+i. The group became quite well known in Europe and Asia.
+</p>
+
+<p>
+ii. Mendelssohn promoted the Pulu Moe ensemble
+vigorously, marketing them as "foreign" and "exotic."
+iii. After Mendelssohn’s death, the Moe Trio disbanded.
+</p>
+</div>
+</li>
+
+<li><a id="org23d9088"></a>a. Pulu Moe worked in a factory in London and returned to Hawaii in 1962.<br />
+<div class="outline-text-6" id="text-7-2-1-2-2">
+<p>
+b. Tau Moe family continued to tour and returned to Hawaii in their eighties.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org9b8cf49"></a>3. The ukulele has enjoyed several waves of popularity in North America.<br />
+<ol class="org-ol">
+<li><a id="orgdc8fb39"></a>a. The popularity of the steel guitar and ukulele spread to North America first during the ukulele craze of the 1920s and 1930s.<br />
+<div class="outline-text-6" id="text-7-2-1-3-1">
+<p>
+b. Revived through LP recordings in the 1950s
+c. Recent restoring and remastering of historic Hawaiian
+recordings
+d. The third great ukulele era began in 2006 with Jake
+Shimakukuro’s performance on a viral YouTube video.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org07922c5"></a>4. Since the 1970s, Hawaii has seen a resurgence of interest in its indigenous music and hula dance traditions.<br />
+<ol class="org-ol">
+<li><a id="orga8bb2fa"></a>a. Hula is popular internationally as well.<br />
+<div class="outline-text-6" id="text-7-2-1-4-1">
+<p>
+i. There are approximately forty hula schools in Holland,
+more than six hundred in Mexico, and about one
+thousand in Japan.
+</p>
+</div>
+</li>
+
+<li><a id="orgad6208c"></a>a. Hawaiian music and hula have become enormously popular among young Japanese women.<br />
+<div class="outline-text-6" id="text-7-2-1-4-2">
+<p>
+b. Today, ukulele lessons are aired on Japanese
+television.
+</p>
+
+<p>
+b. Hawaiian music is found internationally in surprising locales.
+i. Hula and ukulele workshops and classes are held
+throughout the United States.
+ii. Hawaii-based dance groups focus entirely on the hula.
+iii. Many in the continental United States teach, perform,
+and maintain many Polynesian dances.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="org746ed56"></a>5. The wide array of internationally dispersed Hawaiian music and dance traditions testifies to the impact of tourism on music.<br /></li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org9280033" class="outline-3">
+<h3 id="org9280033"><span class="section-number-3">7.3.</span> 3. INTERCULTURAL TRANSMISSION AND BOUNDARY CROSSING</h3>
+<div class="outline-text-3" id="text-7-3">
+</div>
+<div id="outline-container-org5cc5004" class="outline-4">
+<h4 id="org5cc5004"><span class="section-number-4">7.3.1.</span> A. Case Study: New Music for Balinese Gamelan</h4>
+<div class="outline-text-4" id="text-7-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org0c9c8dc"></a>1. Gamelan internationally supported by the Indonesian government to represent indigenous musical traditions abroad.<br />
+<ol class="org-ol">
+<li><a id="org8b90821"></a>a. Gamelan has influenced many outside of Indonesia.<br />
+<div class="outline-text-6" id="text-7-3-1-1-1">
+<p>
+i. Inspiring new compositions for the traditional
+ensemble
+ii. Inspiring some composers to build their own newly
+designed gamelan and to write music for them
+</p>
+
+<p>
+b. Gong kebyar style was performed by a new gamelan ensemble
+in the first decades of the twentieth century.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org6847861"></a>2. New Balinese gamelan began to attract national and international attention<br />
+<ol class="org-ol">
+<li><a id="org3f0b1ac"></a>a. Balinese dancers and musicians performed to great acclaim at the 1931 International Colonial Exposition in Paris.<br />
+<div class="outline-text-6" id="text-7-3-1-2-1">
+<p>
+i. Bali became a chic tourist destination.
+ii. Bali became the fashion in many distant places.
+</p>
+
+<p>
+b. Following Indonesian independence in 1945, Balinese culture
+was pushed to the fore as an international symbol of Indonesia.
+i. A gamelan gong kebyar was installed at the Presidential
+Palace in Bali.
+ii. Music also continued to play a powerful role in the
+internal Balinese political process.
+c. In the 1960s, the institutional settings for transmission
+of gamelan gong kebyar music were altered.
+i. Government-sponsored schools for music, dance,
+shadow puppetry, and visual arts were established in
+Bali.
+ii. Schools' staffs included increasing numbers of Balinese
+musicians who had received some of their training
+abroad.
+iii. The music continues to be multidimensional and
+embodies the contradictions, continuities, and
+instability of twentieth-century Balinese history.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="orgb88fc26"></a>3. One well-known Balinese composer at work today is I Nyoman Windha.<br />
+<ol class="org-ol">
+<li><a id="org56499b8"></a>a. First made his reputation as an accomplished ugal player<br />
+<div class="outline-text-6" id="text-7-3-1-3-1">
+<p>
+i. Began composing in 1983
+ii. Produced numerous works well known both in Bali and
+abroad
+</p>
+</div>
+</li>
+
+<li><a id="org4e21dc9"></a>a. Traveled often among Indonesia, the United States, and Germany<br />
+<div class="outline-text-6" id="text-7-3-1-3-2">
+<p>
+b. In 2003, Windha moved to California
+</p>
+
+<p>
+b. Worked closely with Gamelan Sekar Jaya
+i. Windha composed Kembang Pencak.
+</p>
+</div>
+</li>
+
+<li><a id="orgbc9d357"></a>a. Pencak is a type of martial arts from Indonesia, and kembang means "blooming."<br />
+<div class="outline-text-6" id="text-7-3-1-3-3">
+<p>
+b. Musical genre: kreasi baru
+ii. Characterized by diverse ingredients
+</p>
+</div>
+</li>
+
+<li><a id="orgbd76a9b"></a>a. Unstable and asymmetrical sections<br />
+<div class="outline-text-6" id="text-7-3-1-3-4">
+<p>
+b. Quick changes of texture and tempo
+c. Windha joined Berkeley's gamelan Sekar Jaya for a year-long
+residency.
+i. Met Evan Ziporyn
+ii. Kembang Pencak became the model for a new piece
+titled Kekembangan.
+</p>
+</div>
+</li>
+
+<li><a id="org8ba99de"></a>a. Highlights differences between Balinese and American musical systems and ways of hearing<br />
+<div class="outline-text-6" id="text-7-3-1-3-5">
+<p>
+b. Substitutes a saxophone quartet for the male
+singers
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org9c82468" class="outline-3">
+<h3 id="org9c82468"><span class="section-number-3">7.4.</span> 4. MUSIC AS ART AND COMMODITY</h3>
+<div class="outline-text-3" id="text-7-4">
+</div>
+<div id="outline-container-org29ee67a" class="outline-4">
+<h4 id="org29ee67a"><span class="section-number-4">7.4.1.</span> A. Case Study: Traveling the Silk Road</h4>
+<div class="outline-text-4" id="text-7-4-1">
+</div>
+<ol class="org-ol">
+<li><a id="org399e0a1"></a>1. The Silk Road's new settings<br />
+<ol class="org-ol">
+<li><a id="org019caf4"></a>a. The historical Silk Road provides an extraordinary tale of the extensive movement of people and music.<br />
+<div class="outline-text-6" id="text-7-4-1-1-1">
+<p>
+b. Twentieth-century elaboration on the Silk Road theme
+conceived by the renowned cellist Yo-Yo Ma
+i. Launched the Silk Road Project to study the “historical
+and present-day flow of culture and ideas along the
+trans-Eurasian trade routes”
+ii. Hopes to plant the seeds of new artistic and cultural
+growth
+c. Yo-Yo Ma provides a model for musical mobility.
+i. Performs in a range of styles, crossing frequently and
+deliberately between soundscapes
+ii. Has collaborated with other classical musicians
+iii. Performs with musicians well established in other
+musical styles
+</p>
+</div>
+</li>
+
+<li><a id="org7d44584"></a>a. Hush with Bobby McFerrin<br />
+<div class="outline-text-6" id="text-7-4-1-1-2">
+<p>
+b. Grammy for Soul of the Tango
+c. Collaborated with Cuban and Brazilian musicians
+to produce Obrigado Brazil
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org8a54497"></a>2. Connecting Silk Road sounds and significances<br />
+<ol class="org-ol">
+<li><a id="orgc2e3fdd"></a>a. Ma launched a cross-cultural project with two goals.<br />
+<div class="outline-text-6" id="text-7-4-1-2-1">
+<p>
+i. To present music and musicians from cultures along the
+ancient Silk Road
+ii. To commission new music from composers from these
+regions
+</p>
+
+<p>
+b. Ma himself has become an active force in initiating musical
+transmission.
+i. Project began its life as a global musical initiative
+drawing heavily on subcultural and intercultural
+musical resources.
+ii. It sponsors concert tours by traditional musicians,
+produces recordings, and collaborates with institutions
+to produce festivals on the theme of the Silk Road.
+iii. The project required considerable financial resources,
+mainly obtained through global corporate sponsors.
+c. An important goal of the Silk Road Project is to bring attention
+to diverse musical traditions from along the historic Silk Road.
+i. Many of the project’s musicians were already known to
+international audiences.
+</p>
+</div>
+</li>
+
+<li><a id="org124a40a"></a>a. Chinese musician Wu Man, a virtuoso player on<br />
+<div class="outline-text-6" id="text-7-4-1-2-2">
+<p>
+the Chinese plucked lute, the pipa.
+</p>
+
+<p>
+b. Already established on the global musical scene
+d. Ma has worked actively to both commission and perform
+music.
+i. The Silk Road Ensemble
+ii. Silk Road Journeys: When Strangers Meet
+e. The Silk Road Project also organized educational projects
+around the world.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org3fad709" class="outline-2">
+<h2 id="org3fad709"><span class="section-number-2">8.</span> Chapter 7 - Music and Dance</h2>
+<div class="outline-text-2" id="text-8">
+</div>
+<div id="outline-container-orgf469de5" class="outline-3">
+<h3 id="orgf469de5"><span class="section-number-3">8.1.</span> 1. INTRODUCTION</h3>
+<div class="outline-text-3" id="text-8-1">
+</div>
+<div id="outline-container-org35688c0" class="outline-4">
+<h4 id="org35688c0"><span class="section-number-4">8.1.1.</span> A. Like music, dance exists in time and space.</h4>
+</div>
+
+<div id="outline-container-orgd36fb24" class="outline-4">
+<h4 id="orgd36fb24"><span class="section-number-4">8.1.2.</span> B. Dance and its musical accompaniment are so closely joined that both are often known by the same name.</h4>
+<div class="outline-text-4" id="text-8-1-2">
+</div>
+<ol class="org-ol">
+<li><a id="org465b23e"></a>1. Dance almost always makes a statement about its time and place, and about the people who are performing it.<br /></li>
+<li><a id="orgfa03bf7"></a>2. Dances can reflect and express a range of emotions.<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org6cf4bf4" class="outline-4">
+<h4 id="org6cf4bf4"><span class="section-number-4">8.1.3.</span> C. Dance enacts the most important values of a soundscape and communicates and reinforces these ideas.</h4>
+<div class="outline-text-4" id="text-8-1-3">
+</div>
+<ol class="org-ol">
+<li><a id="org2b73e05"></a>1. Dance ethnologists specialize in dance studies.<br /></li>
+<li><a id="org8096ee4"></a>2. Choreometrics allows for measurement of many types of movement.<br /></li>
+<li><a id="org0ae6961"></a>3. Recently, scholars have become more concerned with the meaning of<br />
+<div class="outline-text-5" id="text-8-1-3-3">
+<p>
+dance.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org0b78491" class="outline-3">
+<h3 id="org0b78491"><span class="section-number-3">8.2.</span> 2. HEARING AND FEELING THE DANCE</h3>
+<div class="outline-text-3" id="text-8-2">
+</div>
+<div id="outline-container-orge11854a" class="outline-4">
+<h4 id="orge11854a"><span class="section-number-4">8.2.1.</span> A. Case Study: The Union of Dance and Martial Art in Capoeira</h4>
+<div class="outline-text-4" id="text-8-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgd120016"></a>1. Capoeira, a centuries-old Afro-Brazilian performance style, combines<br />
+<div class="outline-text-5" id="text-8-2-1-1">
+<p>
+elements of martial arts, dance, and music.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org7f9fb2e"></a>a. Two competing players perform stylized motions.<br />
+<div class="outline-text-6" id="text-8-2-1-1-1">
+<p>
+b. They are accompanied by a capoeira orchestra called the
+bateria.
+c. Movements are based on the “sway” (ginga), continuous
+motion of the player’s body from side to side in wide-legged
+stances.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgfb03e6a"></a>2. The berimbau is the main instrument of the bateria.<br />
+<ol class="org-ol">
+<li><a id="org139975f"></a>a. Musical bow with a gourd resonator<br />
+<div class="outline-text-6" id="text-8-2-1-2-1">
+<p>
+i. The player holds the bow upright in one hand, pressing
+a coin or stone against the string to change its pitch and
+quality.
+ii. The player holds a stick and a small wicker rattle filled
+with seeds in the other hand, striking the string with the
+stick.
+</p>
+
+<p>
+b. The instruments of the bateria accompany songs with
+Portuguese-language texts.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org700d75b"></a>3. Capoeira commemorates strong elements of resistance against a<br />
+<div class="outline-text-5" id="text-8-2-1-3">
+<p>
+series of injustices to its Afro-Brazilian performers.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org9d090cd"></a>a. Some historians suggest that capoeira is descended from an<br />
+<div class="outline-text-6" id="text-8-2-1-3-1">
+<p>
+Angola combat game called n’golo.
+i. Accompanied by a musical bow.
+ii. Similar combat games are played across west, central,
+and southern Africa, and use of musical bows across the
+continent is widespread.
+</p>
+
+<p>
+b. Capoeira emerged among the African slaves who worked in
+plantations and mines, spreading to those performing other
+forms of labor.
+i. Differing regional styles
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org4490cf4"></a>4. Capoeira’s history has three main periods<br />
+<ol class="org-ol">
+<li><a id="org5a62fe1"></a>a. The slavery period (seventeenth, eighteenth, and nineteenth<br />
+<div class="outline-text-6" id="text-8-2-1-4-1">
+<p>
+centuries until 1888):
+i. Ruling classes disapproved of capoeira and repressed
+participation.
+ii. In the nineteenth century, greater numbers practiced it
+as a “game.”
+</p>
+
+<p>
+b. The underground period (1892 until the 1920s):
+i. The Brazilian government prohibited capoeira gangs.
+ii. Musicians and artists from abroad became interested in
+African traditions in the Americas.
+iii. In 1922, the Brazilian Modernist movement began
+exploring Afro-Brazilian culture.
+c. The academy period (1920s onward):
+i. Capoeira academies were established through the
+efforts of masters (mestres).
+</p>
+</div>
+</li>
+
+<li><a id="org4ea868a"></a>a. Mestre Bimba<br /></li>
+</ol>
+</li>
+<li><a id="org3ffd303"></a>1. Founded the regional style associated<br />
+<div class="outline-text-5" id="text-8-2-1-5">
+<p>
+with Bahia
+</p>
+</div>
+</li>
+<li><a id="org0a15532"></a>2. Developed a system of seven<br />
+<div class="outline-text-5" id="text-8-2-1-6">
+<p>
+melodic/rhythmic patterns called toques
+</p>
+</div>
+</li>
+<li><a id="orgff6ae11"></a>3. Reduced use of drum, changed order of<br />
+<div class="outline-text-5" id="text-8-2-1-7">
+<p>
+roda ritual, added ceremonies
+</p>
+
+<p>
+b. Mestre Pastinha
+</p>
+</div>
+</li>
+<li><a id="org7649ffb"></a>1. Focused on capoeira’s African roots and<br />
+<div class="outline-text-5" id="text-8-2-1-8">
+<p>
+its status as a sport
+</p>
+</div>
+</li>
+<li><a id="org06f7e5d"></a>2. Advanced capoeira as a means of “selfcontrol and education”<br /></li>
+<li><a id="org5cec670"></a>3. Emphasized role of melody, rhythm, and<br />
+<div class="outline-text-5" id="text-8-2-1-10">
+<p>
+song texts
+ii. Today, capoeira is a global phenomenon.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org16a3a6e"></a>a. Masters are publicly recognized.<br />
+<div class="outline-text-6" id="text-8-2-1-10-1">
+<p>
+b. The use if berimbau has expanded beyond
+capoeira.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org452ad03" class="outline-4">
+<h4 id="org452ad03"><span class="section-number-4">8.2.2.</span> B. Case Study: Moving through Time and Space with Bhangra</h4>
+<div class="outline-text-4" id="text-8-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="org24f8ea6"></a>1. Bhangra is a dance tradition that originated in the Punjab region of<br />
+<div class="outline-text-5" id="text-8-2-2-1">
+<p>
+India and is now associated with South Asian diaspora communities in
+Great Britain and North America.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orga187c97"></a>a. Originally referred to the rhythms played by the dhol drums<br />
+<div class="outline-text-6" id="text-8-2-2-1-1">
+<p>
+i. Two-headed drum beaten with curved sticks
+ii. Each head has a distinctive sound.
+</p>
+
+<p>
+b. Giddha: closely related dance for Punjabi women, accompanied
+by hand-claps rather than drums
+c. The dhol rhythm, jhummar, originated in Punjab.
+d. Other instruments were used with the dhol drums:
+i. Bugdu: a monochord
+ii. Algoza: a double flute
+iii. Chimta: an idiophone
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgd71e51b"></a>2. Bhangra in the diaspora<br />
+<ol class="org-ol">
+<li><a id="orgfc6c829"></a>a. Bhangra might have remained a regional harvest dance had<br />
+<div class="outline-text-6" id="text-8-2-2-2-1">
+<p>
+many Punjabis not migrated to Britain in the early 1950s.
+i. By the 1960s, bhangra provided a context in which
+South Asian youths could affirm their cultural identities
+in a positive way.
+ii. By the late 1970s, a number of amateur Punjabi groups
+were performing traditional bhangra at community
+events.
+iii. By the early 1990s, bhangra styles had emerged in
+Great Britain and abroad and had crossed over into the
+mainstream.
+</p>
+
+<p>
+b. In North America, bhangra performance spread to schools and
+college campuses.
+i. Many campuses now have bhangra clubs.
+ii. Many students view participation in bhangra as a way
+to construct a relationship with the traditions of their
+Punjabi-born parents.
+c. Many bhangra styles, including rock bhangra, house bhangra,
+and bhangramuffin, have used new technologies and sampling
+combined with acoustic instruments.
+i. However progressive its sounds and references to
+gender and sexuality in the texts, bhangra movements
+represent traditional South Asian notions of clear
+gender roles.
+</p>
+</div>
+</li>
+
+<li><a id="org75025d0"></a>a. Often separate male and female teams at<br />
+<div class="outline-text-6" id="text-8-2-2-2-2">
+<p>
+competitions
+ii. Aao Nachiye was a bhangra hit of the mid-1990s
+performed by the Sangeet Group.
+</p>
+</div>
+</li>
+
+<li><a id="orgd47b5f1"></a>a. Use of synthesizers and electronic manipulations<br />
+<div class="outline-text-6" id="text-8-2-2-2-3">
+<p>
+b. Retains a number of traditional elements
+d. In recent years, bhangra has moved well beyond college
+campuses to enter the professional "Indipop" scene.
+i. Bhangra has also been performed regularly at clubs in
+England and in urban North America.
+ii. Bhangra and hip hop are partners in creating new
+hybrid styles.
+</p>
+
+<p>
+iii.
+</p>
+
+<p>
+Elders in the Punjabi community have questioned
+bhangra’s departure from its historical roots and
+sounds.
+e. Although bhangra is malleable in many ways, it has several
+features that are stable and that have become its defining
+characteristics.
+i. Repetitive movements such as jhummar
+ii. Strong, regular dhol rhythms
+iii. Punjabi texts
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org3af31fb" class="outline-3">
+<h3 id="org3af31fb"><span class="section-number-3">8.3.</span> 3. DANCE STYLES AND THEIR MULTIPLE MEANINGS</h3>
+<div class="outline-text-3" id="text-8-3">
+</div>
+<div id="outline-container-org5d26a2f" class="outline-4">
+<h4 id="org5d26a2f"><span class="section-number-4">8.3.1.</span> A. Case Study: The Tango</h4>
+<div class="outline-text-4" id="text-8-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="orged9d706"></a>1. Sound and steps<br />
+<ol class="org-ol">
+<li><a id="org99784b1"></a>a. The tango's musical foundation is a quadruple meter strongly<br />
+<div class="outline-text-6" id="text-8-3-1-1-1">
+<p>
+emphasized in the bass.
+i. Features habañera rhythm, named after the Cuban
+rhythm from which it was derived
+</p>
+
+<p>
+b. Circular dance with steps that progress counterclockwise
+i. Includes a number of standard motions
+ii. Some steps are also used in Latin dances such as
+the chachachá and rumba.
+c. Played by the orquesta típica
+i. Piano, violin, and bandoneón.
+ii. Eventually became larger ensembles
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org2aa7971"></a>2. Around 1910, tango dances began to be sung with texts.<br />
+<ol class="org-ol">
+<li><a id="org9fc1e88"></a>a. The singer most responsible for the internationalization of the<br />
+<div class="outline-text-6" id="text-8-3-1-2-1">
+<p>
+tango was Carlos Gardel.
+i. He was a major force in popularizing the tango in Paris
+and in Argentina.
+ii. Tango's popularity spread through nightclub
+performances and recordings, radio, and film.
+</p>
+
+<p>
+b. Tango lyrics drew on the lunfardo, a lower-class dialect of
+Buenos Aires.
+i. Organ grinders (organitos) also played tangos
+throughout the streets.
+c. Migration of the tango to Europe insured its upward mobility
+in Argentina.
+i. Buenos Aires followed Paris's lead in welcoming the
+tango to upper-class cabarets and theaters.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org3a436a7"></a>3. New sounds for the concert hall<br />
+<ol class="org-ol">
+<li><a id="org6f163aa"></a>a. Astor Piazzolla created a purely instrumental "new tango," not<br />
+<div class="outline-text-6" id="text-8-3-1-3-1">
+<p>
+intended for dancing but for the concert hall.
+i. Retained the sound of the bandoneón-centered tango
+ensemble while expanding the rhythmic and harmonic
+complexity of the music
+</p>
+
+<p>
+ii.
+</p>
+
+<p>
+Reshaped its sound to span the divide between popular
+and classical music
+iii. New tango ensemble includes several bandoneóns,
+strings, and percussion instruments, as well as piano
+</p>
+
+<p>
+b. European classical composers such as Igor Stravinsky had
+already incorporated the tango into their compositions.
+c. As the tango spread, different dance styles developed.
+i. Argentine style: performed in a close embrace
+ii. International style: simpler than the Argentine tango,
+highly choreographed for competitions
+iii. American style: a social dance, although it is performed
+in competitions as well
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgd756988"></a>4. Significance<br />
+<ol class="org-ol">
+<li><a id="orgd2f0688"></a>a. The significance of the tango remains a source of dispute in<br />
+<div class="outline-text-6" id="text-8-3-1-4-1">
+<p>
+Argentina.
+i. Themes of overt sexuality and male dominance are
+embedded in the choreography of the dance.
+ii. Body language incorporates and perpetuates notions of
+masculine dominance.
+</p>
+
+<p>
+b. As the tango spread, it was considered exotic and was
+exploited as a commodity.
+i. Holds great significance for its many aficionados who
+are enthralled with the grace and rhythm of the dance
+ii. There are tango clubs throughout the world, including
+in Argentina, Germany, and Japan.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="outline-container-org67fea20" class="outline-2">
+<h2 id="org67fea20"><span class="section-number-2">9.</span> Chapter 8 - Music and Ritual</h2>
+<div class="outline-text-2" id="text-9">
+</div>
+<div id="outline-container-org49c08ac" class="outline-3">
+<h3 id="org49c08ac"><span class="section-number-3">9.1.</span> 1. INTRODUCTION</h3>
+<div class="outline-text-3" id="text-9-1">
+</div>
+<div id="outline-container-org1eff015" class="outline-4">
+<h4 id="org1eff015"><span class="section-number-4">9.1.1.</span> A. Public celebrations of religious belief have provided important settings for musical performance.</h4>
+<div class="outline-text-4" id="text-9-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgbdd8e56"></a>1. Rituals may extend well the boundaries of religious belief.<br />
+<ol class="org-ol">
+<li><a id="orge6f2be4"></a>a. Ritual, sacred service, liturgy, and liturgical order are terms<br />
+<div class="outline-text-6" id="text-9-1-1-1-1">
+<p>
+used interchangeably to refer to public acts of worship.
+</p>
+
+<p>
+b. Rituals tend to share a common structure.
+i. Incorporate a symbolic process or change of state
+ii. Three stages of a cultural ritual: separation, transition,
+and incorporation
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org5ca3a9e"></a>2. Music often provides clear markers of the stages in a rite of passage.<br />
+<ol class="org-ol">
+<li><a id="org7c01266"></a>a. A ritual guides its participants through time in special ways.<br />
+<div class="outline-text-6" id="text-9-1-1-2-1">
+<p>
+b. Music and movement can be crucial to expressing what cannot
+be conveyed through words.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org48cca52"></a>3. The ability of ritual to evoke a strong emotional and physical response<br />
+<div class="outline-text-5" id="text-9-1-1-3">
+<p>
+is shaped through different means in different soundscapes.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org0bb07f3"></a>a. There is no single musical pathway to transcendence.<br />
+<div class="outline-text-6" id="text-9-1-1-3-1">
+<p>
+b. The ritual process can also have very different outcomes.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org541aa1b" class="outline-3">
+<h3 id="org541aa1b"><span class="section-number-3">9.2.</span> 2. THE CENTRALITY OF CHANT</h3>
+<div class="outline-text-3" id="text-9-2">
+</div>
+<div id="outline-container-org8622987" class="outline-4">
+<h4 id="org8622987"><span class="section-number-4">9.2.1.</span> A. Case Study: Tibetan Buddhist Chant</h4>
+<div class="outline-text-4" id="text-9-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org6f349e8"></a>1. Chant may sound simple, but its musical surface can mask<br />
+<div class="outline-text-5" id="text-9-2-1-1">
+<p>
+extraordinary depths of meaning.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org15d389f"></a>a. Tibetan Buddhist chant provides an example of such complex<br />
+<div class="outline-text-6" id="text-9-2-1-1-1">
+<p>
+significance.
+</p>
+
+<p>
+b. Performing chant is instrumental in moving the singer through
+the ritual process to a transformed state.
+c. Ritual meditation text (sadhana) evokes the sacred and helps
+the monk visualize and unite with the deity.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orge8c239a"></a>2. The biphonic vocal style of the monks includes a low fundamental in<br />
+<div class="outline-text-5" id="text-9-2-1-2">
+<p>
+the bass as well as a harmonic high above it.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgf808190"></a>a. Sound is actually two harmonics, the fifth and the tenth.<br />
+<div class="outline-text-6" id="text-9-2-1-2-1">
+<p>
+b. The fundamental slowly rises and falls throughout the
+Mahakala ritual.
+i. Elaborate ritual comprised of sustained sections of
+chant (dbyangs)
+ii. Accompanied by cymbals, drums, and horns
+c. The “Tantra voice” is used in sound rituals associated with
+Tantric belief and philosophy
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org813d65e"></a>3. Study of the rol mo musical repertory has shown that it contains a<br />
+<div class="outline-text-5" id="text-9-2-1-3">
+<p>
+complex mathematical organization of rhythmic structures.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgff9136d"></a>a. Rhythmic complexities require training and experience to<br />
+<div class="outline-text-6" id="text-9-2-1-3-1">
+<p>
+perform and perceive.
+</p>
+
+<p>
+b. The rhythms are not metered, cyclical, or irregular; they are
+free rhythmic patterns.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org1479940"></a>4. Chant has occasionally been presented in public performance.<br />
+<ol class="org-ol">
+<li><a id="orgd948cc8"></a>a. Chant has also been performed in recent years to gain political<br />
+<div class="outline-text-6" id="text-9-2-1-4-1">
+<p>
+and financial support for Tibetans exiled from their homeland.
+</p>
+
+<p>
+b. It has been used in a range of popular contexts, including car
+commercials on television.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org168e8e6" class="outline-3">
+<h3 id="org168e8e6"><span class="section-number-3">9.3.</span> 3. THE CHANGING CONTEXTS OF RITUAL PERFORMANCE</h3>
+<div class="outline-text-3" id="text-9-3">
+</div>
+<div id="outline-container-orgb61c382" class="outline-4">
+<h4 id="orgb61c382"><span class="section-number-4">9.3.1.</span> A. Case Study: Santería</h4>
+<div class="outline-text-4" id="text-9-3-1">
+</div>
+<ol class="org-ol">
+<li><a id="org4c04366"></a>1. Afro-Cuban religion derived from West African beliefs, language, and<br />
+<div class="outline-text-5" id="text-9-3-1-1">
+<p>
+practices that were transplanted to the Caribbean and combined with
+some aspects of Catholicism.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgb440168"></a>a. Large numbers of Africans were imported in a final wave of<br />
+<div class="outline-text-6" id="text-9-3-1-1-1">
+<p>
+slavery as late as the mid-nineteenth century.
+</p>
+
+<p>
+b. African slaves in Cuba managed to create social institutions
+that perpetuated and transformed the traditions they had
+brought with them.
+i. Cabildos are organizations established in Cuba by
+Africans who had shared roots in the same African
+linguistic and cultural group.
+ii. They were increasingly regulated by the Cuban
+government over time.
+</p>
+</div>
+</li>
+
+<li><a id="org354d656"></a>a. Legal restriction in 1888<br />
+<div class="outline-text-6" id="text-9-3-1-1-2">
+<p>
+b. Practiced informally and in secret
+c. Worshiped orishas or santos, which joined African deities with
+Catholic saints
+i. Each was associated with particular herbs and plants,
+and further associated with its own chants, drum
+rhythms, and dance movements.
+ii. Complex rituals sought to help practitioners achieve
+divination and trance states.
+d. The goal of Santería worship is to establish a relationship with
+the orishas.
+i. Animal sacrifices are made in hopes of obtaining help
+from the orishas with the problems of daily life.
+ii. Worshipers of the orishas came to be called santeros.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org10b5dd5"></a>2. Within the rituals of Santería, batá drums summon the orishas at<br />
+<div class="outline-text-5" id="text-9-3-1-2">
+<p>
+certain times.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgbd8dc3f"></a>a. The santero or santera will be possessed or "mounted" by<br />
+<div class="outline-text-6" id="text-9-3-1-2-1">
+<p>
+an orisha.
+</p>
+
+<p>
+b. Possession is regarded as dangerous for those who are not
+spiritually developed.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgfa047cd"></a>3. Chanting has long been an important part of the Santería rituals.<br />
+<div class="outline-text-5" id="text-9-3-1-3">
+<p>
+a. Chants were almost always performed in call-and-response
+style.
+</p>
+
+<p>
+b. A chant is identified with a particular orisha.
+i. Chants differ in their content and function.
+ii. Their power is to communicate with the divinities—to
+"bring down" the orishas.
+c. As the Santería belief system was adopted throughout the
+diaspora, some of its Catholic practices were abandoned.
+i. Emphasis was placed instead on the rituals associated
+with its African roots.
+ii. New performance settings arose, with some
+practitioners taking the controversial step of opening
+formerly secret rituals to the public.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgbc79ac0" class="outline-4">
+<h4 id="orgbc79ac0"><span class="section-number-4">9.3.2.</span> B. Case Study: Ethiopian Christian Chant</h4>
+<div class="outline-text-4" id="text-9-3-2">
+</div>
+<ol class="org-ol">
+<li><a id="orge7feb04"></a>1. The Ethiopian Christian Orthodox Church<br />
+<ol class="org-ol">
+<li><a id="org07311c2"></a>a. One of the oldest Christian denominations in the world<br />
+<div class="outline-text-6" id="text-9-3-2-1-1">
+<p>
+i. Close relations with the Coptic Church of Egypt
+ii. Church stood at the center of Ethiopian religious life
+and the political and cultural life of the people.
+</p>
+
+<p>
+b. Overthrow of Emperor Haile Selassie in 1974 diminished the
+status of the church.
+i. Millions were forced to leave Ethiopia.
+ii. Ethiopians established diaspora communities.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org96f9b09"></a>2. Ethiopian chant in its historical homeland<br />
+<ol class="org-ol">
+<li><a id="org514fde6"></a>a. Ethiopian Christian chant is called zema.<br />
+<div class="outline-text-6" id="text-9-3-2-2-1">
+<p>
+i. Attributed in traditional Ethiopian sources to the divine
+inspiration of Saint Yared
+ii. Transmitted primarily through oral tradition
+iii. System of musical notation helps sustain musical and
+liturgical transmission.
+</p>
+
+<p>
+b. Main setting for elaborate chant performance is the ritual
+called the Mahlet.
+i. Performed for hours throughout the night on holidays
+ii. Includes nearly two dozen types of chants
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgba72c9d"></a>3. Sound<br />
+<ol class="org-ol">
+<li><a id="orgb82f98f"></a>a. When a large number of church musicians (debtaras) are<br />
+<div class="outline-text-6" id="text-9-3-2-3-1">
+<p>
+present for rituals, chants are sung with different forms of
+instrumental accompaniment and dance.
+i. Musicians wave prayer staffs; when chant is repeated,
+they are accompanied by sistra, small metal idiophones
+shaken in repeated patterns of three, four, five, or more
+beats.
+ii. Two kebaro drums enter, playing rhythmic patterns
+that overlap with sistra.
+iii. As the pace increases, musicians begin to dance.
+</p>
+
+<p>
+b. Yome fesseha kone in Ge'ez mode
+i. Sung as part of the Ethiopian ritual for Christmas
+ii. Ge’ez involves distinctive vocal slides called rekrekk.
+iii. In the liturgical setting, this chant is preceded by the
+singing of hallelujahs.
+</p>
+</div>
+</li>
+
+<li><a id="org6a96da6"></a>a. Plainchant style<br />
+<div class="outline-text-6" id="text-9-3-2-3-2">
+<p>
+b. Antiphonal style
+c. This chant can help us understand the extent to which pitch is
+perceived differently across cultural boundaries.
+i. Ethiopian notational sign (melekket) represents a short
+melody.
+</p>
+</div>
+</li>
+
+<li><a id="org62cd9fe"></a>a. The melekket is the smallest musical unit.<br />
+<div class="outline-text-6" id="text-9-3-2-3-3">
+<p>
+transmitted by Ethiopian church musicians.
+</p>
+
+<p>
+b. Several melodies linked together constitute a
+phrase of the chant.
+ii. Debtaras do not hear the chant as consisting of a series
+of individual pitches.
+</p>
+</div>
+</li>
+
+<li><a id="org1a479f8"></a>a. Learn entire chant as performed in ritual.<br />
+<div class="outline-text-6" id="text-9-3-2-3-4">
+<p>
+b. Practice by repeating short phrases after the
+teacher.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgec78800"></a>4. Ethiopian chant in its North American diaspora<br />
+<ol class="org-ol">
+<li><a id="org5234347"></a>a. Ethiopian Christian Orthodox Church has established itself<br />
+<div class="outline-text-6" id="text-9-3-2-4-1">
+<p>
+outside Ethiopia after revolution of the 1970s.
+i. Many urban areas support several Ethiopian
+congregations.
+ii. Most of these congregations lack their own meeting
+spaces and depend on the generosity of other Christian
+denominations.
+</p>
+
+<p>
+b. Challenges confront Ethiopians of the diaspora seeking to
+sustain their religious and musical practice in North America.
+i. Ethiopian Americans have established both community
+organizations and extensive social networks.
+ii. Difficult to gather the necessary funds to sustain even a
+modest Ethiopian Christian ritual cycle
+</p>
+</div>
+</li>
+
+<li><a id="org4e3dedf"></a>a. Severe shortage of qualified clergy<br />
+<div class="outline-text-6" id="text-9-3-2-4-2">
+<p>
+b. The Ethiopian church's music traditions are
+placed at particularly high risk in the diaspora.
+c. Ethiopian Americans sought to bring liturgy closer to other
+American Christian denominations.
+i. The regular performance of the Hymnary is mounted
+only on special occasions.
+ii. Performances of chant lack the polish of Ethiopian
+versions.
+iii. Fewer chants are remembered and are no longer
+perceived in the traditional way.
+</p>
+
+<p>
+5. The impact on liturgical music of changing settings at home and
+abroad
+</p>
+</div>
+</li>
+
+<li><a id="org09d8f4b"></a>a. Church music has clearly changed in the diaspora.<br />
+<div class="outline-text-6" id="text-9-3-2-4-3">
+<p>
+i. Women began to participate.
+ii. Youth choirs began to sing hymns before and after Mass.
+</p>
+
+<p>
+b. New style of sacred music emerged first in Ethiopia.
+i. Sunday Schools opened a pathway for women to
+become active in Ethiopian Christian worship.
+ii. New hymns have proven very popular.
+c. Sacred music remains a vital part of the life in the Ethiopian
+diaspora.
+i. Some musical traditions have been maintained with
+great care and at great sacrifice.
+ii. Changes in the sound and concept of performance have
+been accepted.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="outline-container-orge3e46b8" class="outline-2">
+<h2 id="orge3e46b8"><span class="section-number-2">10.</span> Chapter 9 - Music and Politics</h2>
+<div class="outline-text-2" id="text-10">
+</div>
+<div id="outline-container-org2942812" class="outline-3">
+<h3 id="org2942812"><span class="section-number-3">10.1.</span> 1. INTRODUCTION</h3>
+<div class="outline-text-3" id="text-10-1">
+</div>
+<div id="outline-container-org50af7fc" class="outline-4">
+<h4 id="org50af7fc"><span class="section-number-4">10.1.1.</span> A. Music has always been an integral part of formal displays of political power.</h4>
+</div>
+
+<div id="outline-container-org8608dd1" class="outline-4">
+<h4 id="org8608dd1"><span class="section-number-4">10.1.2.</span> B. It has traditionally conveyed both national identity and official ideologies through symbolic acts, such as the singing of a national anthem.</h4>
+<div class="outline-text-4" id="text-10-1-2">
+</div>
+<ol class="org-ol">
+<li><a id="org87e82d5"></a>1. Important to recognize the difference between open and coded<br />
+<div class="outline-text-5" id="text-10-1-2-1">
+<p>
+political messages
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgcc2e834"></a>a. Musical displays of power, or public transcripts, often affirm<br />
+<div class="outline-text-6" id="text-10-1-2-1-1">
+<p>
+and perpetuate an existing power structure.
+</p>
+
+<p>
+b. Hidden transcripts can be used to describe musical
+performances and repertories through metaphorical or coded
+terms.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgd24d9b2"></a>2. Music is crucial in understanding and interpreting how power is<br />
+<div class="outline-text-5" id="text-10-1-2-2">
+<p>
+enforced as well as how it is challenged.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgc10cff5" class="outline-4">
+<h4 id="orgc10cff5"><span class="section-number-4">10.1.3.</span> C. Music can empower people within a particular setting while it is being used and transformed in very different contexts.</h4>
+</div>
+</div>
+
+
+<div id="outline-container-org32eedf7" class="outline-3">
+<h3 id="org32eedf7"><span class="section-number-3">10.2.</span> 2. MUSICS OF POWER AND RESISTANCE</h3>
+<div class="outline-text-3" id="text-10-2">
+</div>
+<div id="outline-container-org49b805b" class="outline-4">
+<h4 id="org49b805b"><span class="section-number-4">10.2.1.</span> A. Case Study: The Birth of a National Anthem</h4>
+<div class="outline-text-4" id="text-10-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org00ce56c"></a>1. Music can challenge inequitable power relations.<br />
+<ol class="org-ol">
+<li><a id="org3bb8006"></a>a. Nkosi Sikel’ iAfrika originated as a Christian hymn and was<br />
+<div class="outline-text-6" id="text-10-2-1-1-1">
+<p>
+transformed into a musical emblem of political resistance.
+</p>
+
+<p>
+b. In the 1990s, it became a respected national anthem.
+i. Melody was composed by Enoch Mankayi Sontonga, a
+choirmaster and teacher at a Methodist mission school
+near Johannesburg, South Africa.
+ii. The text is sung in several different South African
+languages.
+iii. Deeply influenced by Western music and harmony
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="orgeea4853"></a>2. Became associated with the African National Congress (ANC)<br />
+<ol class="org-ol">
+<li><a id="orgd25a136"></a>a. Nelson Mandela was its leader for much of the late twentieth<br />
+<div class="outline-text-6" id="text-10-2-1-2-1">
+<p>
+century.
+</p>
+
+<p>
+b. ANC and Nkosi Sikel’ iAfrika were banned by the South African
+government as subversive.
+c. With Mandela's release from prison and subsequent election to
+the presidency, the nation needed a new anthem.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgcf915ac"></a>3. For a time, The Call of South Africa and Nkosi Sikelel’ iAfrika were<br />
+<div class="outline-text-5" id="text-10-2-1-3">
+<p>
+designated dual national anthems.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org4ad74f4"></a>a. Nkosi Sikelel’ iAfrika was viewed as an anthem of freedom and<br />
+<div class="outline-text-6" id="text-10-2-1-3-1">
+<p>
+independence throughout Africa.
+</p>
+
+<p>
+b. Became the official national anthem of countries such as
+Tanzania and Zambia
+c. South African government later approved a single, composite
+national anthem.
+</p>
+
+<p>
+4. Over the years, Nkosi Sikelel’ iAfrika has continued to accrue multiple
+layers of meaning:
+</p>
+</div>
+</li>
+
+<li><a id="orgd71632c"></a>a. As a Christian hymn<br />
+<div class="outline-text-6" id="text-10-2-1-3-2">
+<p>
+b. As a song of resistance
+c. As an integral part of the new South African national anthem
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org33d15c0" class="outline-4">
+<h4 id="org33d15c0"><span class="section-number-4">10.2.2.</span> B. Case Study: Reggae</h4>
+<div class="outline-text-4" id="text-10-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="orgb797cd0"></a>1. Ras Tafari became Emperor Haile Selassie of Ethiopia in 1930.<br />
+<ol class="org-ol">
+<li><a id="org4bf8063"></a>a. Became a widely known and compelling figure to many people<br />
+<div class="outline-text-6" id="text-10-2-2-1-1">
+<p>
+of color in North America and the Caribbean
+</p>
+
+<p>
+b. His government's autonomy was challenged by the Italian
+invasion in 1935.
+i. Provided a symbol for the Rastafarian political and
+religious movement
+ii. Became closely associated with the musical style known
+as reggae
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org7ae80fe"></a>2. Rastafarian movement had its philosophical roots in the 1920s and<br />
+<div class="outline-text-5" id="text-10-2-2-2">
+<p>
+the Back to Africa movement.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org19a337b"></a>a. Belief that a black king in Africa would mean deliverance for all<br />
+<div class="outline-text-6" id="text-10-2-2-2-1">
+<p>
+black people
+i. Coronation of Ras Tafari as Haile Selassie was
+interpreted as the fulfillment of these prophecies.
+ii. In the West Indies, an outcome of these events was the
+formation of groups supporting the Ethiopian emperor.
+Group members believed Haile Selassie’s coronation:
+</p>
+</div>
+</li>
+
+<li><a id="org4a14944"></a>a. Heralded the downfall of “Babylon” (white<br />
+<div class="outline-text-6" id="text-10-2-2-2-2">
+<p>
+colonial powers) and an end to colonial rule
+</p>
+
+<p>
+b. Heralded the promised deliverance of oppressed
+blacks
+</p>
+
+<p>
+b. Rastafarianism provided fertile ground for the development of
+powerful rituals and symbols.
+i. Green, yellow, and red—the colors of the Ethiopian
+flag—were adopted by Rastafarians.
+ii. Dreadlock hairstyles
+iii. Use of mind-altering substances
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org25dbc58"></a>3. At first, no single musical style was associated with Rastafarianism.<br />
+<ol class="org-ol">
+<li><a id="org5d81453"></a>a. By the early 1960s, a predecessor of reggae called ska was<br />
+<div class="outline-text-6" id="text-10-2-2-3-1">
+<p>
+popular.
+i. Based on an indigenous Jamaican rhythm emphasizing
+offbeats in quadruple rhythmic pattern
+</p>
+
+<p>
+b. Ska was followed in the mid-1960s by rock steady.
+i. Slower tempo
+ii. Texts discussed freedom and equality
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgd4de8f2"></a>4. In 1968, reggae came on the scene<br />
+<ol class="org-ol">
+<li><a id="orgd6eecf4"></a>a. Its name was taken from the song Do the Reggay.<br />
+<div class="outline-text-6" id="text-10-2-2-4-1">
+<p>
+i.
+</p>
+
+<p>
+Defined early on as encompassing “poverty, suffering,
+Rastafari, everything in the ghetto.”
+ii. Derived from the English word “regular.”
+</p>
+
+<p>
+b. Rhythm is essential to the Rastafarian reggae tradition: riddim.
+i. Riddim is a metaphor for the idea of resistance in the
+lyrics.
+ii. Some riddims are named, such as cordiroy (corduroy),
+bangara (from bhangra), or diwali (a Hindu festival).
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org9c4bd43"></a>5. Reggae musicians have taken strong political stands through their<br />
+<div class="outline-text-5" id="text-10-2-2-5">
+<p>
+music.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orga5767ae"></a>a. Bob Marley was internationally known and became the<br />
+<div class="outline-text-6" id="text-10-2-2-5-1">
+<p>
+musician most widely associated with reggae and other
+Jamaican musics.
+</p>
+
+<p>
+b. Reggae has maintained its status as music of political
+resistance through various transformations on the
+international stage.
+i. Reggae entered mass culture through recordings.
+ii. Led an increasingly dual life as both a cult and
+commercial music
+c. The 1990s also saw the emergence of new kinds of localized
+reggae styles such as reggaeton.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgb9f6896" class="outline-4">
+<h4 id="orgb9f6896"><span class="section-number-4">10.2.3.</span> C. Case Study: The Shoshone Powwow</h4>
+<div class="outline-text-4" id="text-10-2-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgc28e1fb"></a>1. The setting of Shoshone Indian Days<br />
+<ol class="org-ol">
+<li><a id="org646eb17"></a>a. The first Native American powwow was held in the late<br />
+<div class="outline-text-6" id="text-10-2-3-1-1">
+<p>
+nineteenth century.
+i. Algonquian word pawwaw refers to religious
+practitioners and healing ceremonies
+ii. By 1900, the word was applied to any type of gathering.
+</p>
+
+<p>
+b. The modern intertribal powwow has its origins in 1920s
+Oklahoma.
+i. Large, intertribal powwows became increasingly
+widespread over the years.
+ii. Today, the number of North American powwows is
+estimated at more than two thousand per year.
+c. The Eastern Shoshone Indian Days festival is part of the
+increasingly well-established "powwow circuit."
+i. The powwow takes place in the town of Fort Washakie,
+Wyoming.
+</p>
+</div>
+</li>
+
+<li><a id="orgce32a3a"></a>a. Wooden arbor is the focus of powwow activities.<br />
+<div class="outline-text-6" id="text-10-2-3-1-2">
+<p>
+b. Center of arbor is reserved for dancers.
+ii. During the evening hours, the powwow dance
+competitions are held.
+</p>
+</div>
+</li>
+
+<li><a id="org8429b10"></a>a. Participants come from throughout the West.<br />
+<div class="outline-text-6" id="text-10-2-3-1-3">
+<p>
+b. Features multiple drum groups that take turns
+accompanying the dancers
+</p>
+
+<p>
+d. Competitive dances are usually divided into separate
+traditional and fancy styles.
+i. Fancy and Traditional War Dances for men
+</p>
+</div>
+</li>
+
+<li><a id="org50bfc2c"></a>a. Main difference between the styles is that there<br />
+<div class="outline-text-6" id="text-10-2-3-1-4">
+<p>
+are added spins and twirls in the choreography
+of the Fancy War Dance.
+</p>
+
+<p>
+b. Women originally did not dance the War Dance,
+but they do today.
+ii. The traditional dances have lost some of their
+popularity.
+</p>
+</div>
+</li>
+
+<li><a id="org6b17708"></a>a. Fancy War and Fancy Shawl Dances are more<br />
+<div class="outline-text-6" id="text-10-2-3-1-5">
+<p>
+popular with young people.
+</p>
+
+<p>
+b. Jingle Dress Dance also is popular.
+e. The focus of most modern powwows is the dance competitions.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org14b5849"></a>2. The Flag Song’s sound and significance<br />
+<ol class="org-ol">
+<li><a id="orga7f87ab"></a>a. Every powwow begins with a Grand Entry.<br />
+<div class="outline-text-6" id="text-10-2-3-2-1">
+<p>
+i. Veterans carry the American flag, the state flag, and
+banners of the Veterans of Foreign Wars.
+</p>
+</div>
+</li>
+
+<li><a id="org8aa9a2c"></a>a. Flag presentation is accompanied the Flag Song.<br />
+<div class="outline-text-6" id="text-10-2-3-2-2">
+<p>
+b. Solemn ceremony
+ii. Shoshone repertory contains many Flag Songs.
+</p>
+</div>
+</li>
+
+<li><a id="orgccf48c0"></a>a. Native American flag ceremony replaces the<br />
+<div class="outline-text-6" id="text-10-2-3-2-3">
+<p>
+national anthem with Native American song.
+</p>
+
+<p>
+b. New Flag Songs commemorate the different
+military conflicts in which Native Americans
+have served.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgb9f6553"></a>3. Honoring warriors in song: the War Dance<br />
+<ol class="org-ol">
+<li><a id="org19be995"></a>a. War Dance songs make overt political statements.<br />
+<div class="outline-text-6" id="text-10-2-3-3-1">
+<p>
+i. Warrior-fighter has given way to the warrior-dancer.
+</p>
+</div>
+</li>
+
+<li><a id="org18c81e9"></a>a. Present-day War Dances mimic traditional<br />
+<div class="outline-text-6" id="text-10-2-3-3-2">
+<p>
+fighting movements.
+</p>
+
+<p>
+b. Motions sustain the War Dance’s historical
+connections to the Wolf Dance.
+</p>
+
+<p>
+b. War Dance is also connected to nature.
+c. The War Dance Song is the centerpiece of the powwow.
+i. Shoshone singers often borrow songs from other
+groups.
+ii. Sometime borrow from non–Native American sources.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org1949c53"></a>4. The changing settings of powwow music<br />
+<ol class="org-ol">
+<li><a id="org0259900"></a>a. The music of the powwow has also shifted to new settings.<br />
+<div class="outline-text-6" id="text-10-2-3-4-1">
+<p>
+i. Halftime at football games
+ii. Rodeos and other ceremonies
+</p>
+
+<p>
+b. Reaching new audiences through mass media
+c. American Indian Dance Theatre
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="outline-container-org6a4a3b5" class="outline-2">
+<h2 id="org6a4a3b5"><span class="section-number-2">11.</span> Chapter 10 - Music and Identity</h2>
+<div class="outline-text-2" id="text-11">
+</div>
+<div id="outline-container-orge447b88" class="outline-3">
+<h3 id="orge447b88"><span class="section-number-3">11.1.</span> 1. INTRODUCTION</h3>
+<div class="outline-text-3" id="text-11-1">
+</div>
+<div id="outline-container-orgf513630" class="outline-4">
+<h4 id="orgf513630"><span class="section-number-4">11.1.1.</span> A. Among the many elements that define our identities are ethnicity, race, class, gender, and religious orientation.</h4>
+<div class="outline-text-4" id="text-11-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="orgac3e7d5"></a>1. National or regional heritage, language group, political affiliation, and occupation may also contribute.<br /></li>
+<li><a id="orgf1635bb"></a>2. Identity is almost always constructed in relation to groups that we either wish to be part of or seek to distinguish ourselves from.<br /></li>
+</ol>
+</div>
+
+<div id="outline-container-org0a09170" class="outline-4">
+<h4 id="org0a09170"><span class="section-number-4">11.1.2.</span> B. Identities are complex formations that rarely stay static.</h4>
+<div class="outline-text-4" id="text-11-1-2">
+</div>
+<ol class="org-ol">
+<li><a id="org499c86a"></a>1. Today, many music traditions remain closely associated with<br />
+<div class="outline-text-5" id="text-11-1-2-1">
+<p>
+communities that share background and history.
+</p>
+</div>
+</li>
+<li><a id="orgc83ab75"></a>2. Many aspects of ethnic identity are shaped by descent; others are<br />
+<div class="outline-text-5" id="text-11-1-2-2">
+<p>
+determined by consent and consciously chosen through affiliations.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-orgad49df2" class="outline-4">
+<h4 id="orgad49df2"><span class="section-number-4">11.1.3.</span> C. Musical styles that symbolize identity maintain strong links with the past or with an original homeland.</h4>
+<div class="outline-text-4" id="text-11-1-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgba54397"></a>1. In the twenty-first century, a challenge in charting identity and its<br />
+<div class="outline-text-5" id="text-11-1-3-1">
+<p>
+expression through music is the increasing separation of identity
+from place.
+</p>
+</div>
+</li>
+<li><a id="orgd36d34e"></a>2. Geographic location is one of many important contextual factors<br />
+<div class="outline-text-5" id="text-11-1-3-2">
+<p>
+that may define a soundscape.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org5182fb6" class="outline-3">
+<h3 id="org5182fb6"><span class="section-number-3">11.2.</span> 2. EXPRESSING INDIVIDUAL AND GROUP IDENTITIES THROUGH MUSIC</h3>
+<div class="outline-text-3" id="text-11-2">
+</div>
+<div id="outline-container-org10bd2ba" class="outline-4">
+<h4 id="org10bd2ba"><span class="section-number-4">11.2.1.</span> A. Case Study: The Intercultural Music of Composer Lei Liang</h4>
+<div class="outline-text-4" id="text-11-2-1">
+</div>
+<ol class="org-ol">
+<li><a id="org562e55a"></a>1. Lei Liang was born in Tianjin, China in 1972, during China’s<br />
+<div class="outline-text-5" id="text-11-2-1-1">
+<p>
+Cultural Revolution.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orge0f9e9d"></a>a. The Cultural Revolution effectively brought independent<br />
+<div class="outline-text-6" id="text-11-2-1-1-1">
+<p>
+composing, performing, teaching, and research to an official
+halt.
+</p>
+
+<p>
+b. After the Cultural Revolution ended, normal cultural life in
+China slowly resumed, and composers were again free to
+express themselves creatively.
+i. “New wave” Chinese composers graduated from the
+Central Conservatory in Beijing and then emigrated to
+the West in the early 1980s.
+</p>
+</div>
+</li>
+
+<li><a id="orgc2d91e8"></a>a. The Chinese musical migration has had a<br />
+<div class="outline-text-6" id="text-11-2-1-1-2">
+<p>
+significant international impact on musical
+composition.
+ii. Lei Liang is one of a younger cohort who were born in
+China during or after the Cultural Revolution and who
+emigrated to study and compose abroad.
+</p>
+</div>
+</li>
+
+<li><a id="org10e3a59"></a>a. Like those of his older colleagues, his<br />
+<div class="outline-text-6" id="text-11-2-1-1-3">
+<p>
+compositions draw on his Chinese heritage.
+</p>
+
+<p>
+b. He has constructed his own compositional voice
+and honed a “few core concepts” that he believes
+</p>
+
+<p>
+cross “historical, cultural, technological, and
+disciplinary boundaries.”
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org3397abf"></a>2. Liang’s work Gobi Gloria absorbs different cultural influences,<br />
+<div class="outline-text-5" id="text-11-2-1-2">
+<p>
+transforms them, and communicates them.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org2e419fa"></a>a. The piece is a celebration of Mongolia’s Gobi Desert; the title<br />
+<div class="outline-text-6" id="text-11-2-1-2-1">
+<p>
+refers to the Gloria section of the Roman Catholic Mass.
+</p>
+
+<p>
+b. Liang became fascinated by Inner Asian biphonic singing.
+i. It inspired his compositional principle of the “shadow.”
+ii. “One-note polyphony.”
+c. In his concept of “breathing,” Liang follows how the flow of
+melody resembles the process of the human breath.
+d. In his concept of transformation, Liang approaches sound as a
+“living entity, its latent dynamics and hidden forces mirror an
+individual’s adaptation in a complex and ever-changing world.”
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgbfaa60d"></a>3. Wenren is a traditional Chinese concept that refers to a philosopherartist whose works that cut across boundaries.<br />
+<ol class="org-ol">
+<li><a id="orgdff64f5"></a>a. Liang’s work is a confluence of Western and Asian cultures<br />
+<div class="outline-text-6" id="text-11-2-1-3-1">
+<p>
+b. The synthesis in Liang’s work draws on processes of descent,
+affinity, and close study.
+i. The creation of musical hybrids extends beyond the
+arena of musical sound to provide insight into personal
+and collective identity.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org16dd1ca" class="outline-4">
+<h4 id="org16dd1ca"><span class="section-number-4">11.2.2.</span> B. Case Study: The Multiple Meanings of Karaoke</h4>
+<div class="outline-text-4" id="text-11-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="org641fca7"></a>1. Karaoke ("empty orchestra") originated in 1972 at a snack bar in<br />
+<div class="outline-text-5" id="text-11-2-2-1">
+<p>
+Kobe, Japan.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgc220295"></a>a. Technologically mediated musical performance.<br />
+<div class="outline-text-6" id="text-11-2-2-1-1">
+<p>
+b. Spread throughout Japan and East Asia, later
+internationally.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org6ee2d9a"></a>2. Karaoke has been discussed by scholars on several levels:<br />
+<ol class="org-ol">
+<li><a id="orgfc2aaed"></a>a. As a performance medium grounded in new technologies<br />
+<div class="outline-text-6" id="text-11-2-2-2-1">
+<p>
+b. As a setting-specific musical genre
+c. As a ritualized form of musical behavior
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgcab9878"></a>3. Karaoke is closely associated with particular social settings.<br />
+<ol class="org-ol">
+<li><a id="org1649470"></a>a. Originally popular in bars and night clubs; substituted for<br />
+<div class="outline-text-6" id="text-11-2-2-3-1">
+<p>
+live performance
+</p>
+
+<p>
+b. Also popular at dinner parties and in private homes
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org1097912"></a>4. In Japan, both social and musical behaviors associated with<br />
+<div class="outline-text-5" id="text-11-2-2-4">
+<p>
+karaoke are quite formalized and patterned.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org3464f22"></a>a. Rules for karaoke performance circulate formally in<br />
+<div class="outline-text-6" id="text-11-2-2-4-1">
+<p>
+karaoke journals.
+i. Popular list of "seven taboos" in karaoke
+ii. Rules are intended to help regulate gender
+hierarchies and politeness in public space.
+</p>
+
+<p>
+b. Additional hidden rules guarantee decorum and minimize
+competition.
+</p>
+
+<p>
+5. Karaoke draws on the traditional Japanese value of kata
+(“patterned form”).
+</p>
+</div>
+</li>
+
+<li><a id="orgdc99607"></a>a. Pervades many Japanese arts.<br />
+<div class="outline-text-6" id="text-11-2-2-4-2">
+<p>
+i. Expressive forms are composed of precise, named
+patterns.
+ii. Form is considered to be more important than
+original content.
+</p>
+
+<p>
+b. The kata principle as manifested in a historical musical
+style is found in kabuki theater.
+i. Kata guides everything.
+ii. Kata shapes musical expression.
+c. Kata provides the aesthetic framework for repeating a wellknown pattern, an aesthetic that reverberates throughout
+karaoke.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org621fa09"></a>6. Karaoke also draws on a long tradition in Japan of communal,<br />
+<div class="outline-text-5" id="text-11-2-2-5">
+<p>
+public singing.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org58083e8"></a>a. One Japanese popular song genre, called enka, is<br />
+<div class="outline-text-6" id="text-11-2-2-5-1">
+<p>
+particularly associated with karaoke.
+i. Enka is based on stylized formulas.
+ii. The karaoke singer of enka must reproduce the
+song’s words and music and imitate the original
+singer’s style.
+iii. Enka promotes shared values and forges group
+identity
+</p>
+
+<p>
+b. Karaoke has deep roots in traditional Japanese values and
+enjoys broad-based popularity in Japan, supported by an
+active karaoke culture.
+i. The karaoke performance derives its significance
+from intimate settings.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orge9ace48"></a>7. Karaoke first spread throughout East Asia.<br />
+<ol class="org-ol">
+<li><a id="orga902adf"></a>a. Changes were introduced as it was adopted in different<br />
+<div class="outline-text-6" id="text-11-2-2-6-1">
+<p>
+national settings.
+</p>
+
+<p>
+b. Others worldwide have adapted karaoke to a variety of
+settings.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org590bffd" class="outline-4">
+<h4 id="org590bffd"><span class="section-number-4">11.2.3.</span> C. Case Study: Multiple Identities in Cajun and Zydeco Musics</h4>
+<div class="outline-text-4" id="text-11-2-3">
+</div>
+<ol class="org-ol">
+<li><a id="orgd7e4bc8"></a>1. The French heritage of Creoles and Cajuns<br />
+<ol class="org-ol">
+<li><a id="org93cb005"></a>a. Creoles and Cajuns share the same language and the same<br />
+<div class="outline-text-6" id="text-11-2-3-1-1">
+<p>
+geographical region.
+</p>
+
+<p>
+b. Both traditions trace their roots to the French-speaking
+people who arrived in Louisiana between the sixteenth and
+seventeenth centuries.
+i. Creoles are a heterogeneous group of people who
+are of mixed French, Spanish, and African or AfroCaribbean descent.
+</p>
+
+<p>
+ii.
+</p>
+
+<p>
+Cajuns arrived later, beginning in 1755. Cajuns
+descend from a more homogeneous community of
+French refugees who lived in Acadia.
+</p>
+</div>
+</li>
+
+<li><a id="orgdf2d27e"></a>a. Expelled by the British<br />
+<div class="outline-text-6" id="text-11-2-3-1-2">
+<p>
+b. The name “Cajun” derives from the French
+adjective acadien, meaning a person from
+Acadia.
+iii. Present-day musical style most closely associated
+with Creole identity—zydeco music—emerged only
+in the mid-twentieth century.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org6de6941"></a>2. Setting: musics of place<br />
+<ol class="org-ol">
+<li><a id="org128443f"></a>a. Cajuns sustained their French traditions and language,<br />
+<div class="outline-text-6" id="text-11-2-3-2-1">
+<p>
+which increasingly came into contact with a number of
+other peoples and cultures.
+i. Gave rise to a rich, distinctive culture and musical
+style
+ii. The culture and the music, along with the people
+themselves, came to be known as Cajun.
+iii. Cajuns contributed to other well-known American
+musical styles.
+</p>
+
+<p>
+b. Ensembles consist of accordion, fiddle, guitar, triangle, and
+drums.
+i. Fiddle traveled with the Acadians.
+ii. Accordion was introduced by German immigrants.
+iii. Electric guitars and drum sets were incorporated
+into Cajun bands.
+c. Emphasis in many Cajun songs is on the sound of the words.
+i. Cajun French has declined dramatically.
+ii. Cajun song was one of the few means of preserving
+the special Cajun French dialect.
+d. The button accordion is at the heart of the Cajun sound.
+e. The association of Cajun music with dance has played an
+important part in keeping Cajun music alive.
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orgfb7da34"></a>3. Sound and significance: singing ethnicity, race, and class<br />
+<ol class="org-ol">
+<li><a id="orgfa03959"></a>a. Historically, Cajun and Creole cultures have had much in<br />
+<div class="outline-text-6" id="text-11-2-3-3-1">
+<p>
+common.
+i. Poor Creoles of color and Cajun whites worked side
+by side in the same fields.
+</p>
+</div>
+</li>
+
+<li><a id="org1888065"></a>a. Prolonged period of cultural exchange<br />
+<div class="outline-text-6" id="text-11-2-3-3-2">
+<p>
+between the groups resulted in culinary and
+linguistic blending.
+</p>
+
+<p>
+b. Cajun dialect of French took on distinctive
+local features.
+ii. Cajun and Creole musicians even played together.
+</p>
+
+<p>
+b. The division between Cajuns and Creoles extends to their
+names for the very places they jointly inhabit.
+c. Complicated musical, racial, and cultural interactions
+emerged including, after World War II, resulting in a
+distinctively Creole music that came to be called zydeco.
+i. Zydeco has interacted with other African American
+and Caribbean traditions.
+ii. Zydeco was at first influenced by Cajun music; later,
+zydeco began to influence Cajun musicians more
+strongly.
+</p>
+</div>
+</li>
+
+<li><a id="org773e7eb"></a>a. Zydeco uses the same core ensemble as Cajun<br />
+<div class="outline-text-6" id="text-11-2-3-3-3">
+<p>
+music.
+</p>
+
+<p>
+b. Part of zydeco's distinctive sound came from
+a found instrument: a steel washboard or
+"rub board."
+iii. In black Creole society, as well as in Cajun circles,
+music flourished in bals de maison (house dances).
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org63e291b"></a>4. Zydeco's kings and queens<br />
+<ol class="org-ol">
+<li><a id="org13785d1"></a>a. The use of the titles “king” and “queen” comes from Joe<br />
+<div class="outline-text-6" id="text-11-2-3-4-1">
+<p>
+Falcon, who called himself the “Famous Columbia Record
+King.”
+i. Zydeco kings ruled this male-dominated tradition.
+ii. Very few women were able to make careers as
+zydeco musicians.
+</p>
+
+<p>
+b. Ida Guillory is an exception among zydeco musicians.
+i. Queen Ida's musical style embodies all the hallmarks
+of zydeco.
+ii. Virtuoso accordion player
+</p>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="orge75b319"></a>5. Raising Creole voices, reviving Creole roots<br />
+<ol class="org-ol">
+<li><a id="orgc41c313"></a>a. Interaction between Cajuns and Creoles is once again emerging.<br />
+<div class="outline-text-6" id="text-11-2-3-5-1">
+<p>
+b. New bands are now bridging the racial and musical gap.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Stephen Strauss</p>
+<p class="date">Created: 2024-08-30 Fri 23:40</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
