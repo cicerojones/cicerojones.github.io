@@ -1,10 +1,12 @@
 #+SETUPFILE: ~/repos/org/resources/org-templates/new-setup/setup-barest-options.org
+#+SETUPFILE: ~/repos/org/resources/org-templates/new-setup/setup-style-org1-FIX.org
 
 #+OPTIONS: pri:t
 
 #+TITLE: Soundscapes
 
-#+html_head: <link rel="stylesheet" type="text/css" href="../../../css/solarized-dark.css" />
+# #+html_head: <link rel="stylesheet" type="text/css" href="css/solarized-dark.css" />
+#+html_head: <link rel="stylesheet" type="text/css" href="css/rethink-margin.css" />
 
 #+infojs_opt: path:org-info.js
 #+infojs_opt: toc:nil ltoc:above view:info mouse:underline buttons:nil
